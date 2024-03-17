@@ -26,7 +26,7 @@
   <header class="page-header">
     <div class="content-wrapper desktop-header-row">
       <div class="mobile-top">
-        <h1 class="page-title">MINDFUL</h1>
+      <img class="logo" src="icons/icons8-graph-96.png">
 
         <button class="nav-button" id="nav-button">
           <img src="icons/nav-button.png">
@@ -35,15 +35,13 @@
 
       <nav class="page-navigation" id="nav-list">
         <ul class="nav-links">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="discover.php">Discover</a></li>
-          <li><a href="articles.php">Articles</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="contact.php">Contact</a></li>
-
-
-
-
+          <div class="nav-links-left">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="discover.php">Discover</a></li>
+            <li><a href="articles.php">Articles</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
+          </div>
           <?php
 
           if(isset($_SESSION["loggedIn"])) {
