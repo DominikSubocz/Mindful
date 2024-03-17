@@ -20,6 +20,8 @@ body, button, input, textarea, select {
   text-decoration: none;
 }
 
+
+
 input.button {
   border: 0;
   cursor: pointer;
@@ -51,7 +53,7 @@ input.button {
 
 /* HEADER, NAVIGATION, FOOTER */
 .page-header {
-  background-color: orange;
+  background-color: #fff;
 }
 
 .page-footer {
@@ -115,6 +117,24 @@ input.button {
 .nav-links a:hover {
   background-color: orangered;
   color: white;
+}
+
+.sign-up-btn{
+  background-color:gold;
+  border-radius: 10px;
+  padding:15px 20px !important;
+  font-size: 18px !important;
+
+}
+
+.login-btn{
+  background-color: gainsboro;
+  border-radius: 10px;
+  padding:15px 20px !important;
+  font-size: 18px !important;
+
+
+
 }
 
 /* BOOK LIST */
@@ -294,8 +314,9 @@ input:not(input.button) {
 
   /* HEADER, NAVIGATION, FOOTER */
   .content-wrapper {
-    width: 900px;
+    width: 90%;
   }
+
 
   .main-content {
     padding: 0;
@@ -317,6 +338,7 @@ input:not(input.button) {
 
   .nav-links {
     display: flex;
+    align-items: center;
   }
 
   .nav-links a {

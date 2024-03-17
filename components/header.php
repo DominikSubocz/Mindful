@@ -26,7 +26,7 @@
   <header class="page-header">
     <div class="content-wrapper desktop-header-row">
       <div class="mobile-top">
-        <h1 class="page-title">Book Store</h1>
+        <h1 class="page-title">MINDFUL</h1>
 
         <button class="nav-button" id="nav-button">
           <img src="icons/nav-button.png">
@@ -35,7 +35,14 @@
 
       <nav class="page-navigation" id="nav-list">
         <ul class="nav-links">
-          <li><a href="book-list.php">Books</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="discover.php">Discover</a></li>
+          <li><a href="articles.php">Articles</a></li>
+          <li><a href="about.php">About</a></li>
+          <li><a href="contact.php">Contact</a></li>
+
+
+
 
           <?php
 
@@ -50,7 +57,8 @@
           }
 
           else{
-            echo "<li><a href='login.php'>Login</a></li>";
+            echo "<li><a class='login-btn button' href='login.php'>Login</a></li>
+                <li><a class='sign-up-btn button' href='register.php'>Sign up</a></li>";
 
           }
           ?>
