@@ -33,35 +33,35 @@
         </button>
       </div>
 
-      <nav class="page-navigation" id="nav-list">
-        <ul class="nav-links">
-          <div class="nav-links-left">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="discover.php">Discover</a></li>
-            <li><a href="articles.php">Articles</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="contact.php">Contact</a></li>
-          </div>
+      <div class="nav-links-left">
+        <nav class="page-navigation" id="nav-list">
+              <ul class="nav-links">
+                  <li><a href="index.php">Home</a></li>
+                  <li><a href="discover.php">Discover</a></li>
+                  <li><a href="articles.php">Articles</a></li>
+                  <li><a href="about.php">About</a></li>
+                  <li class="link-left"><a href="contact.php">Contact</a></li>
+              </ul>
+        </nav>
+      </div>
+      <div class="nav-links-right">
+        <nav class="page-navigation" id="nav-list">
+
           <?php
-
-          if(isset($_SESSION["loggedIn"])) {
-            $user = $_SESSION["username"];
-            if($_SESSION["user_role"] === "Admin") {
-              echo "<li><a href='add-book.php'>Add Book</a></li>";
-            }
-            echo "<li><a href='basket.php'>Basket</a></li>
-            <li><a href='user.php'>$user's Account</a></li>
-            <li><a href='logout.php'>Logout</a></li>";
-          }
-
-          else{
-            echo "<li><a class='login-btn button' href='login.php'>Login</a></li>
-                <li><a class='sign-up-btn button' href='register.php'>Sign up</a></li>";
-
-          }
-          ?>
-        </ul>
-      </nav>
+                  if(isset($_SESSION["loggedIn"])) {
+                    $user = $_SESSION["username"];
+                    if($_SESSION["user_role"] === "Admin") {
+                      echo "<li><a href='add-book.php'>Add Book</a></li>";
+                    }
+                    echo "<li><a href='logout.php'>Logout</a></li>";
+                  }
+                  else{
+                    echo "<li class='link-right'> <a class='login-btn button' href='login.php'>Login</a></li>
+                        <li class='link-right'> <a class='sign-up-btn button' href='register.php'>Sign up</a></li>";
+                  }
+            ?>
+        </nav>
+      </div>
     </div>
   </header>
 

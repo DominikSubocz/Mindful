@@ -1,3 +1,10 @@
+/* CSS HEX */
+/* --platinum: #E7E7E7ff;
+--black: #030303ff;
+--white: #FFFFFFff;
+--pear: #C9D541ff;
+--gold-metallic: #E4BA4Fff; */
+
 * {
   box-sizing: border-box;
 }
@@ -57,9 +64,42 @@ input.button {
 }
 
 .page-footer {
-  border-top: 2px solid black;
   margin-top: 32px;
   text-align: center;
+  background-color: #E7E7E7ff ;
+}
+
+.footer-wrapper{
+  display: flex;
+  padding:45px 8vw;
+  align-items: flex-start;
+}
+
+.footer-top h2{
+  margin:0;
+}
+
+.footer-section h4{
+  margin:0;
+}
+
+.footer-section ul{
+  list-style: none;
+  text-align: left;
+  margin:0 20px;
+}
+
+.footer-section ul li{
+  margin:10px 0;
+}
+
+.footer-section ul li a{
+  text-decoration: none;
+  color: #030303ff;
+}
+
+.footer-top{
+  margin-right: auto;
 }
 
 .page-header, .page-footer {
@@ -332,8 +372,11 @@ input:not(input.button) {
     display: none;
   }
 
+
   .page-navigation {
-    display: block;
+    display: flex;
+    list-style: none;
+    gap:0 16px;
   }
 
   .logo{
@@ -346,18 +389,12 @@ input:not(input.button) {
   }
 
   .nav-links-left{
-    display: flex;
+    margin-right: auto;
   }
-
-
 
   .nav-links a {
     margin-top: 0;
     margin-left: 16px;
-  }
-
-  .nav-links:last-child{
-    margin-left: auto;
   }
 
   /* BOOK LIST */
