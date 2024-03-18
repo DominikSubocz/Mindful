@@ -1,8 +1,8 @@
 <?php
 
 class Utils {
-  public static $projectFilePath = "http://localhost/Bookstore-Template-Chris";
-  // public static $projectFilePath = "http://192.168.0.14:8080/Bookstore-Template-Chris";
+  public static $projectFilePath = "http://localhost/Mindful";
+  // public static $projectFilePath = "http://192.168.0.14:8080/Mindful";
   public static $defaultBookCover = "default.png";
 
   /**

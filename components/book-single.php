@@ -6,7 +6,6 @@
 
     <h3><?php echo $author; ?></h3>
 
-    <p class="book-price">£<?php echo $price; ?></p>
 
     <form
       method="POST"
