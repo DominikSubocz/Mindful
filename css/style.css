@@ -326,6 +326,10 @@ input:not(input.button) {
     such as the page navigation.
   */
 
+  .desktop-header-row{
+    box-shadow: 1px 1px lightblue;
+  }
+
   .main-content{
     padding-left: 0;
     padding-right: 0;
@@ -388,6 +392,23 @@ input:not(input.button) {
 
   .articles-hero-img-container{
     width:100%;
+  }
+
+  .book-list{
+    padding:0 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 750px;
+  }
+
+  .book-list::-webkit-scrollbar{
+    display: none;
+  }
+
+  .nav-button img, .logo{
+    width: 50px;
   }
 
 

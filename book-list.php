@@ -20,47 +20,49 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
     </div>
 </div>
 
-<h2>Latest Articles</h2>
-
-
-<div class="book-list">
-
-    <!-- <div class="articles-buttons-container">
-        <span class="material-symbols-outlined">
-        chevron_left
-        </span>
-        <span class="material-symbols-outlined">
-        chevron_right
-        </span>
-    </div> -->
-    <?php
-
-    $books = Book::getAllBooks();
-    Components::allBooks($books);
-
-    ?>
-</div>
-
-<div class="trending-articles">
-    <h2>Trending Articles</h2>
+<div class="article-list-container">
+    <h2>Latest Articles</h2>
     
-    
-    <div class="book-list ">
-    
-        <!-- <div class="articles-buttons-container">
-            <span class="material-symbols-outlined">
+    <div class="articles-buttons-container">
+            <span class="material-symbols-outlined article-arrow-left">
             chevron_left
             </span>
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined article-arror-right">
             chevron_right
             </span>
-        </div> -->
+        </div>
+    <div class="book-list">
+    
+    
         <?php
     
         $books = Book::getAllBooks();
         Components::allBooks($books);
     
         ?>
+    </div>
+    
+    <div class="trending-articles">
+        <h2>Trending Articles</h2>
+    
+    
+        <div class="book-list ">
+    
+            <!-- <div class="articles-buttons-container">
+                <span class="material-symbols-outlined">
+                chevron_left
+                </span>
+                <span class="material-symbols-outlined">
+                chevron_right
+                </span>
+            </div> -->
+            <?php
+    
+            $books = Book::getAllBooks();
+            Components::allBooks($books);
+    
+            ?>
+        </div>
     </div>
 </div>
 
