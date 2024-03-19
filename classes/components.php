@@ -12,6 +12,7 @@ class Components {
 
     public static function allBooks($books){
         if(!empty($books)){
+
             foreach($books as $book){
                 $bookId = Utils::escape($book["book_id"]);
                 $title = Utils::escape($book["title"]);
@@ -23,6 +24,34 @@ class Components {
             }
 
 
+        }
+
+        else{
+            require("components/no-books-found.php");
+        }
+    }
+
+
+
+    public static function latestPosts($books){
+        $count = 0; // Initialize a counter to keep track of the number of books displayed
+
+        if(!empty($books)){
+            foreach($books as $book){
+                if ($count >= 6) {
+                    break; // Exit the loop once three books have been displayed
+                }
+                
+                $bookId = Utils::escape($book["book_id"]);
+                $title = Utils::escape($book["title"]);
+                $author = Utils::escape($book["author"]);
+                $price = Utils::escape($book["price"]);
+                $filename = Utils::escape($book["filename"]);
+        
+                require("components/book-card.php");
+                
+                $count++; // Increment the counter after displaying each book
+            }
         }
 
         else{

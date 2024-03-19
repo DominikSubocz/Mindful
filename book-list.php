@@ -37,7 +37,7 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
         <?php
     
         $books = Book::getAllBooks();
-        Components::allBooks($books);
+        Components::latestPosts($books);
     
         ?>
     </div>
@@ -59,9 +59,33 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
             <?php
     
             $books = Book::getAllBooks();
-            Components::allBooks($books);
+            Components::latestPosts($books);
     
             ?>
+        </div>
+    </div>
+
+    <div class="all-articles">
+        <h2>All Articles</h2>
+    
+    
+        <div class="book-list ">
+    
+            <!-- <div class="articles-buttons-container">
+                <span class="material-symbols-outlined">
+                chevron_left
+                </span>
+                <span class="material-symbols-outlined">
+                chevron_right
+                </span>
+            </div> -->
+            <?php
+    
+            $books = Book::getAllBooks();
+            Components::allBooks($books);
+            ?>
+
+
         </div>
     </div>
 </div>
