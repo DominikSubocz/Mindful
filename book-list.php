@@ -20,8 +20,59 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
     </div>
 </div>
 
-<div class="article-list-container">
-    <h2>Latest Articles</h2>
+<div class="article-list-container articles-section">
+
+
+    <div class="articles-categories-container">
+        <div class="article-category-card">
+            <div class="article-category-overlay">
+                <h3>Mindfulness Introduction</h3>
+            </div>
+
+            <div class="article-category-img-container">
+                <img class="book-image" src="images/introduction.jpg" alt="Woman medidating on sports mat">
+            </div>
+
+        </div>
+        
+
+        <div class="article-category-card">
+            <div class="article-category-overlay">
+                <h3>Mindfulness Techniques</h3>
+            </div>
+
+            <div class="article-category-img-container">
+                <img class="book-image" src="images/techniques.jpg" alt="Woman medidating on sports mat">
+            </div>
+
+        </div>
+
+        <div class="article-category-card">
+            <div class="article-category-overlay">
+                <h3>Mindfulness in Daily Life</h3>
+            </div>
+
+            <div class="article-category-img-container">
+                <img class="book-image" src="images/daily.jpg" alt="Woman medidating on sports mat">
+            </div>
+
+        </div>
+
+        <div class="article-category-card">
+            <div class="article-category-overlay">
+                <h3>Stress Reduction</h3>
+            </div>
+
+            <div class="article-category-img-container">
+                <img class="book-image" src="images/stress.jpg" alt="Woman medidating on sports mat">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="article-heading">
+        <h2>Latest Articles</h2>
+    </div>
     
     <div class="articles-buttons-container">
             <span class="material-symbols-outlined article-arrow-left">
@@ -42,8 +93,10 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
         ?>
     </div>
     
-    <div class="trending-articles">
-        <h2>Trending Articles</h2>
+    <div class="trending-articles articles-section">
+        <div class="article-heading">
+            <h2>Trending Articles</h2>
+        </div>
     
     
         <div class="book-list ">
@@ -65,8 +118,10 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
         </div>
     </div>
 
-    <div class="all-articles">
-        <h2>All Articles</h2>
+    <div class="all-articles articles-section">
+        <div class="article-heading">
+            <h2>All Articles</h2>
+        </div>
     
     
         <div class="book-list ">

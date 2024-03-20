@@ -10,7 +10,7 @@
       
       <div class="footer-middle-start footer-section">
         <ul>
-          <h4>Connect</h4>
+          <li>Connect</li>
           <li><a href="https://www.facebook.com">Facebook</a></li>
           <li><a href="https://www.instagram.com">Instagram</a></li>
           <li><a href="https://www.linkedin.com">LinkedIn</a></li>
