@@ -27,10 +27,19 @@ body, button, input, textarea, select {
   text-decoration: none;
 }
 
-input{
+input, textarea{
   border: none;
   background-color: #E7E7E7ff;
   border-radius: 10px;
+}
+
+textarea{
+  max-width: 100%;
+  min-width: 100%;
+}
+
+iframe{
+  width: 100%;
 }
 
 
@@ -323,6 +332,21 @@ input:not(input.button) {
   flex: 1;
 }
 
+@media screen and (max-width:450px){
+  .authentication-container, .contact-form-container, .contact-map-container{
+    width: 75vw !important;
+    margin-left:20px;
+  }
+
+  .contact-submit-button{
+    margin-top:10px;
+  }
+
+  .contact-map-container{
+    margin-top:180px;
+  }
+}
+
 
 @media screen and (max-width:725px)
 {
@@ -349,9 +373,12 @@ input:not(input.button) {
     padding:10px 0;
   }
 
-  .authentication-container{
-    width: 75vw;
-    margin: 0 auto;
+  .contact-submit-button{
+    margin-top:10px;
+  }
+
+  .contact-map-container{
+    margin-top:180px;
   }
 }
 /* MOBILE AND TABLET */
@@ -526,9 +553,18 @@ input:not(input.button) {
     width: 150px;
   }
 
-  .authentication-container{
-    width: 75vw;
-    margin: 0 auto;
+
+  .authentication-container, .contact-form-container, .contact-map-container{
+    width: 60vw;
+    margin-left:20px;
+  }
+
+  .contact-submit-button{
+    margin-top:10px;
+  }
+
+  .contact-map-container{
+    margin-top:180px;
   }
 
 
@@ -814,8 +850,19 @@ input:not(input.button) {
     width: 150px;
   }
 
-  .authentication-container{
-    width: 75vw;
-    margin: 0 auto;
+  .authentication-container, .contact-form-container, .contact-map-container{
+    width: 35vw;
+    margin-left:20px;
+  }
+
+  .contact-submit-button{
+    margin-top:10px;
+  }
+
+  .contact-map-container{
+    margin-top:180px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 96vw;
   }
 }
