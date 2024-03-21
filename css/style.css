@@ -19,12 +19,18 @@ body, button, input, textarea, select {
 }
 
 .button {
-  background-color: orange;
+  background-color:rgb(237, 252, 74);
   color: black;
   display: inline-block;
   font-weight: bold;
   padding: 8px 16px;
   text-decoration: none;
+}
+
+input{
+  border: none;
+  background-color: #E7E7E7ff;
+  border-radius: 10px;
 }
 
 
@@ -161,7 +167,6 @@ input.button {
 }
 
 .sign-up-btn{
-  background-color:gold;
   border-radius: 10px;
   padding:15px 20px !important;
   font-size: 18px !important;
@@ -343,6 +348,11 @@ input:not(input.button) {
   .articles-section{
     padding:10px 0;
   }
+
+  .authentication-container{
+    width: 75vw;
+    margin: 0 auto;
+  }
 }
 /* MOBILE AND TABLET */
 @media screen and (max-width: 949px) {
@@ -514,6 +524,11 @@ input:not(input.button) {
 
   .book-card h3 {
     width: 150px;
+  }
+
+  .authentication-container{
+    width: 75vw;
+    margin: 0 auto;
   }
 
 
@@ -797,5 +812,10 @@ input:not(input.button) {
 
   .book-card h3 {
     width: 150px;
+  }
+
+  .authentication-container{
+    width: 75vw;
+    margin: 0 auto;
   }
 }
