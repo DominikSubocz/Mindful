@@ -469,7 +469,6 @@ input:not(input.button) {
     overflow-y: hidden;
     overflow-x: scroll;
     margin:40px auto;
-    width: 575px;
     max-width: 1500px;
     
   }
