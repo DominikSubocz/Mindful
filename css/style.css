@@ -521,6 +521,11 @@ input:not(input.button) {
 
 /* DESKTOP */
 @media screen and (min-width: 950px) {
+
+  body, html{
+    overflow-x: hidden;
+  }
+
   .button-form .button {
     text-align: center;
     max-width: 250px;
@@ -732,5 +737,65 @@ input:not(input.button) {
 
   .book-info h3{
     font-size: 15px;
+  }
+
+  .article-heading{
+    margin-left:60px;
+  }
+
+  .articles-section{
+    padding:10px 0;
+  }
+
+  .articles-categories-container{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin:40px auto;
+    max-width: 1500px;
+    
+  }
+
+  .articles-categories-container::-webkit-scrollbar{
+    display: none;
+  }
+  
+
+  .article-category-card{
+    position: relative;
+    background-color: #e7e7e775;
+    margin:0 auto;
+    border-radius: 25px;
+
+  }
+
+  .article-category-img-container{
+    width: 100%;
+  }
+
+  .article-category-card .book-image{
+    width: 215px;
+    height: 175px;
+    object-fit: cover;
+    position: relative;
+    border-radius: 25px;
+    z-index: -1;
+  }
+  
+
+  .article-category-overlay{
+    position:absolute;
+    width: 50%;
+    margin-top:55px;
+    margin-left: 50px;
+    text-align: center;
+  }
+
+  .book-card p {
+    width: 150px;
+  }
+
+  .book-card h3 {
+    width: 150px;
   }
 }
