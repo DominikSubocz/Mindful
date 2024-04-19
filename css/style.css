@@ -438,6 +438,17 @@ input:not(input.button) {
   .step-card-img{
     width: 250px;
   }
+
+  .index-steps{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:250px;
+  }
+
+  .index-steps-heading{
+    margin-bottom:-250px;
+  }
   
 }
 
@@ -564,6 +575,17 @@ input:not(input.button) {
 
   .step-card-img{
     width: 250px;
+  }
+
+  .index-steps{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:250px;
+  }
+
+  .index-steps-heading{
+    margin-bottom:-250px;
   }
 }
 /* MOBILE AND TABLET */
@@ -844,6 +866,17 @@ input:not(input.button) {
 
   .step-card-img{
     width: 250px;
+  }
+
+  .index-steps{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:250px;
+  }
+
+  .index-steps-heading{
+    margin-bottom:-250px;
   }
 
 }
@@ -1255,5 +1288,17 @@ input:not(input.button) {
 
   .step-card-img{
     width: 250px;
+  }
+
+  .index-steps{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top:250px;
+  }
+
+  .index-steps-heading{
+    margin-bottom:-250px;
+    
   }
 }
