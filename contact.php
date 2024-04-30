@@ -10,55 +10,71 @@ $output = "";
 ?>
 
 <div class="contact-form-container">
-    <h1>Get in touch</h1>
-    
-    <form
-        method="POST"
-        action="<?php echo $_SERVER["PHP_SELF"];?>"
-        class="form">
-    
-        <label>Your Name</label>
-        <input
-            type="text"
-            name="name"
-            value="<?php
-    
-            if($output && isset($_POST["loginSubmit"]) && isset($_POST["name"])){
-                echo Utils::escape($_POST["name"]);
-            }
-    
-            ?>"
-        >
-    
-        <label>Your Email Address</label>
-        <input
-            type="text"
-            name="email"
-            value="<?php
-    
-            if($output && isset($_POST["loginSubmit"]) && isset($_POST["email"])){
-                echo Utils::escape($_POST["email"]);
-            }
-    
-            ?>"
-        >
-    
-    
-    
-    
-        <label>Write your message</label>
-        <textarea name="message">
-            <?php
-            if ($output && isset($_POST["submit"]) && isset($_POST["message"])) {
-                echo Utils::escape($_POST["message"]);
-            }
-            ?>
-        </textarea>
-    
-        <input class="button contact-submit-button" type="submit" name="contactSubmit" value="Send">
-    
-        <?php if ($output && isset($_POST["loginSubmit"])) { echo $output; } ?>
-    </form>
+    <div>
+        <h1>Get in touch</h1>
+        
+        <form
+            method="POST"
+            action="<?php echo $_SERVER["PHP_SELF"];?>"
+            class="form">
+        
+            <label>Your Name</label>
+            <input
+                type="text"
+                name="name"
+                value="<?php
+        
+                if($output && isset($_POST["loginSubmit"]) && isset($_POST["name"])){
+                    echo Utils::escape($_POST["name"]);
+                }
+        
+                ?>"
+            >
+        
+            <label>Your Email Address</label>
+            <input
+                type="text"
+                name="email"
+                value="<?php
+        
+                if($output && isset($_POST["loginSubmit"]) && isset($_POST["email"])){
+                    echo Utils::escape($_POST["email"]);
+                }
+        
+                ?>"
+            >
+        
+        
+        
+        
+            <label>Write your message</label>
+            <textarea name="message">
+                <?php
+                if ($output && isset($_POST["submit"]) && isset($_POST["message"])) {
+                    echo Utils::escape($_POST["message"]);
+                }
+                ?>
+            </textarea>
+        
+            <input class="button contact-submit-button" type="submit" name="contactSubmit" value="Send">
+        
+            <?php if ($output && isset($_POST["loginSubmit"])) { echo $output; } ?>
+        </form>
+    </div>
+
+    <div class="contact-info-card">
+        <h3>Contact Information</h3>
+        <h4>Address</h4>
+        <p>
+            123 Mindful Street<br>
+            San Francisco, CA 94103
+        </p>
+        <h4>Phone Number</h4>
+        <p>+1 (123) 456-7890</p>
+
+        <h4>Email</h4>
+        <p>help@mindful.com</p>
+    </div>
 </div>
 
 <div class="contact-map-container">
