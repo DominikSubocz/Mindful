@@ -40,7 +40,7 @@
               <ul class="nav-links">
                   <li><a href="index.php">Home</a></li>
                   <li><a href="discover.php">Discover</a></li>
-                  <li><a href="articles.php">Articles</a></li>
+                  <li><a href="book-list.php">Articles</a></li>
                   <li><a href="about.php">About</a></li>
                   <li class="link-left"><a href="contact.php">Contact</a></li>
               </ul>
