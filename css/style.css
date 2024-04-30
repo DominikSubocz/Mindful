@@ -9,8 +9,13 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  min-height: 100%;
 }
 
 body, button, input, textarea, select {
@@ -382,9 +387,6 @@ input:not(input.button) {
     margin-left: auto;
   }
 
-
-
-
   .index-content h1{
     font-size: 25px;
     margin-top:150px;
@@ -439,21 +441,47 @@ input:not(input.button) {
     width: 250px;
   }
 
-  .index-steps{
+  .index-card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .index-steps{
     margin-top:250px;
   }
 
   .index-steps-heading{
     margin-bottom:-250px;
   }
+
+  .index-benefits, .index-app{
+    margin-top:150px;
+  }
+
+  .index-benefits  .button{
+    margin-bottom:30px;
+  }
+  
+  .footer-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-top{
+    margin:0;
+  }
+
+  .footer-section{
+    width: 230px;
+    margin:20px 0;
+  }
   
 }
 
 
-@media screen and (min-width: 451px) and (max-width: 725px) {
+@media screen and (min-width: 451px) and (max-width: 726px) {
 
   .footer-wrapper{
     display: flex;
@@ -578,14 +606,25 @@ input:not(input.button) {
   }
 
   .index-steps{
+    margin-top:250px;
+  }
+
+  .index-card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:250px;
   }
 
   .index-steps-heading{
     margin-bottom:-250px;
+  }
+
+  .index-benefits, .index-app{
+    margin-top:150px;
+  }
+
+  .index-benefits  .button{
+    margin-bottom:30px;
   }
 }
 /* MOBILE AND TABLET */
@@ -596,9 +635,7 @@ input:not(input.button) {
     such as the page navigation.
   */
 
-  body, html{
-    overflow-x: hidden;
-  }
+
 
   .mobile-top{
     width: 90vw;
@@ -789,6 +826,7 @@ input:not(input.button) {
 
   .home-hero-img1{
     top:115px;
+    left:20px;
   }
 
   .home-hero-img2{
@@ -869,14 +907,35 @@ input:not(input.button) {
   }
 
   .index-steps{
+    margin-top:250px;
+  }
+
+  .index-card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:250px;
   }
 
   .index-steps-heading{
     margin-bottom:-250px;
+  }
+
+  .index-benefits, .index-app{
+    margin-top:150px;
+  }
+
+  .index-benefits  .button{
+    margin-bottom:30px;
+  }
+
+  .index-steps-heading{
+    margin-bottom:-250px;
+  }
+
+  .index-img-parent-container{
+    position: relative;
+    width: 100%;
+    top:-250px;
   }
 
 }
@@ -1193,12 +1252,12 @@ input:not(input.button) {
 
   .home-hero-img1{
     top:115px;
-    left:130px;
+    left:20px;
   }
 
   .home-hero-img2{
     top:425px;
-    right: 130px;
+    right: 50px;
     margin-left: auto;
   }
 
@@ -1266,6 +1325,7 @@ input:not(input.button) {
     flex-direction: column;
     justify-content: flex-end;
     border-width: 0 2px 0 0 !important;
+    padding:0 60px 0 60px;
   }
 
 
@@ -1282,10 +1342,6 @@ input:not(input.button) {
     max-width: 250px;
   }
 
-  .step-card h2, .step-card p{
-    margin-left:5vw;
-  }
-
   .step-card-img{
     width: 250px;
   }
@@ -1297,8 +1353,54 @@ input:not(input.button) {
     margin-top:250px;
   }
 
+  .index-benefits .index-steps-container{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .index-benefits .index-steps-container .step-card{
+    flex-direction: row;
+    border-width: 2px 0 0 0 !important;
+  }
+
+  .index-benefits .index-steps-container .step-one{
+    flex-direction: row;
+    border-width: 0 !important;
+  }
+
+  .index-benefits .index-steps-container .step-card div{
+    margin-left:25.5vw;
+    width: 350px;
+  }
+
+  .index-benefits .index-steps-container .step-card div h2{
+    max-width: 100%;
+  }
+
+  .index-benefits{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .index-benefits .button{
+    margin:0 auto;
+  }
+
   .index-steps-heading{
     margin-bottom:-250px;
-    
+    position: relative;
+    margin: 0 auto -250px auto;
+    right: 425px;
+  }
+
+  .index-benefits .index-steps-container h2{
+    max-width: 250px;
+  }
+
+  .index-img-parent-container{
+    position: relative;
+    width: 100%;
+    top:-150px;
   }
 }
