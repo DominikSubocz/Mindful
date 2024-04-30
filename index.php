@@ -123,12 +123,14 @@ $location = "";
     <div class="index-steps-container">
         <div class="step-card step-one">
             <img src="images/isometric-woman-meditating-at-home.png" alt="Woman sitting meditating at home." class="step-card-img">
-            <h2>Read Mindful Everywhere</h2>
-            <p>
-                Access a wealth of articles on mental health and well-being.
-                Expand your knowledge and prectice mindfulness with Mindful.
-            </p>
-            <a href="#" class="button">Download</a>
+            <div>
+                <h2>Read Mindful Everywhere</h2>
+                <p>
+                    Access a wealth of articles on mental health and well-being.
+                    Expand your knowledge and prectice mindfulness with Mindful.
+                </p>
+                <a href="#" class="button">Download</a>
+            </div>
 
         </div>
     </div>

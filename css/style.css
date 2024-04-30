@@ -433,6 +433,12 @@ input:not(input.button) {
     border-width: 2px 0 0 0;
   }
 
+  .step-card div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .step-card p{
     width: 75vw;
   }
@@ -1316,8 +1322,6 @@ input:not(input.button) {
     max-width: 1500px;
     border-width: 2px 0 2px 0 !important;
 
-    
-
   }
 
   .step-card{
@@ -1325,7 +1329,7 @@ input:not(input.button) {
     flex-direction: column;
     justify-content: flex-end;
     border-width: 0 2px 0 0 !important;
-    padding:0 60px 0 60px;
+    padding:0 35px 0 35px;
   }
 
 
@@ -1369,7 +1373,7 @@ input:not(input.button) {
   }
 
   .index-benefits .index-steps-container .step-card div{
-    margin-left:25.5vw;
+    margin:0 auto 0 300px;
     width: 350px;
   }
 
@@ -1391,7 +1395,11 @@ input:not(input.button) {
     margin-bottom:-250px;
     position: relative;
     margin: 0 auto -250px auto;
-    right: 425px;
+    right: 375px;
+  }
+
+  .index-steps .index-steps-heading{
+    right: 355px;
   }
 
   .index-benefits .index-steps-container h2{
@@ -1402,5 +1410,37 @@ input:not(input.button) {
     position: relative;
     width: 100%;
     top:-150px;
+  }
+
+  .index-app{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .index-app .index-steps-container{
+    border-width: 2px 0 0 0 !important;
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
+  .index-app .index-steps-container .step-card div{
+    margin:0 330px 0 auto;
+    position: relative;
+    right: 32px;
+
+  }
+
+  .index-app .index-steps-container h2{
+    max-width: 320px;
+  }
+
+  .index-app .index-steps-container p{
+    max-width: 320px;
+  }
+
+  .index-app .step-card{
+    border-width: 0 !important;
+    flex-direction: row-reverse;
+
   }
 }
