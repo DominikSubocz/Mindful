@@ -9,8 +9,13 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  min-height: 100%;
 }
 
 body, button, input, textarea, select {
@@ -336,6 +341,12 @@ input:not(input.button) {
   border: 2px solid #e7e7e7;
 }
 
+.contact-info-card{
+  background-color: #E7E7E7ff;
+  border-radius: 10px;
+  height: fit-content;
+}
+
 
 @media screen and (max-width:450px){
   .authentication-container, .contact-form-container, .contact-map-container{
@@ -360,7 +371,7 @@ input:not(input.button) {
   }
 
   .contact-map-container{
-    margin-top:180px;
+    margin-top:50px;
   }
 
   .home-img{
@@ -381,9 +392,6 @@ input:not(input.button) {
     right: 20px;
     margin-left: auto;
   }
-
-
-
 
   .index-content h1{
     font-size: 25px;
@@ -431,6 +439,12 @@ input:not(input.button) {
     border-width: 2px 0 0 0;
   }
 
+  .step-card div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .step-card p{
     width: 75vw;
   }
@@ -439,21 +453,52 @@ input:not(input.button) {
     width: 250px;
   }
 
-  .index-steps{
+  .index-card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .index-steps{
     margin-top:250px;
   }
 
   .index-steps-heading{
     margin-bottom:-250px;
   }
+
+  .index-benefits, .index-app{
+    margin-top:150px;
+  }
+
+  .index-benefits  .button{
+    margin-bottom:30px;
+  }
+  
+  .footer-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-top{
+    margin:0;
+  }
+
+  .footer-section{
+    width: 230px;
+    margin:20px 0;
+  }
+
+  .contact-info-card{
+    padding:5px;
+    margin-top:50px;
+  }
   
 }
 
 
-@media screen and (min-width: 451px) and (max-width: 725px) {
+@media screen and (min-width: 451px) and (max-width: 726px) {
 
   .footer-wrapper{
     display: flex;
@@ -487,7 +532,7 @@ input:not(input.button) {
   }
 
   .contact-map-container{
-    margin-top:180px;
+    margin-top:50px;
   }
 
   .home-img{
@@ -578,14 +623,30 @@ input:not(input.button) {
   }
 
   .index-steps{
+    margin-top:250px;
+  }
+
+  .index-card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:250px;
   }
 
   .index-steps-heading{
     margin-bottom:-250px;
+  }
+
+  .index-benefits, .index-app{
+    margin-top:150px;
+  }
+
+  .index-benefits  .button{
+    margin-bottom:30px;
+  }
+
+  .contact-info-card{
+    padding:5px;
+    margin-top:50px;
   }
 }
 /* MOBILE AND TABLET */
@@ -596,9 +657,7 @@ input:not(input.button) {
     such as the page navigation.
   */
 
-  body, html{
-    overflow-x: hidden;
-  }
+
 
   .mobile-top{
     width: 90vw;
@@ -789,6 +848,7 @@ input:not(input.button) {
 
   .home-hero-img1{
     top:115px;
+    left:20px;
   }
 
   .home-hero-img2{
@@ -869,14 +929,52 @@ input:not(input.button) {
   }
 
   .index-steps{
+    margin-top:250px;
+  }
+
+  .index-card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:250px;
   }
 
   .index-steps-heading{
     margin-bottom:-250px;
+  }
+
+  .index-benefits, .index-app{
+    margin-top:150px;
+  }
+
+  .index-benefits  .button{
+    margin-bottom:30px;
+  }
+
+  .index-steps-heading{
+    margin-bottom:-250px;
+  }
+
+  .index-img-parent-container{
+    position: relative;
+    width: 100%;
+    top:-250px;
+  }
+
+  .contact-form-container{
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .contact-info-card{
+    width: 100%;
+    padding:5px 15px;
+    margin:50px 25px 0 50px;
+  }
+
+  .contact-map-container{
+    width: 95%;
+    margin: 50px auto;
   }
 
 }
@@ -1165,21 +1263,46 @@ input:not(input.button) {
   .book-card h3 {
     width: 150px;
   }
+  .contact-form-container{
+    display: flex;
+    width: 85%;
+    margin: 50px auto 0 auto;
+  }
 
-  .authentication-container, .contact-form-container, .contact-map-container{
+  .contact-form-container .button{
+    width: 100%;
+    padding:15px 0;
+  }
+
+  .contact-form-container input:not(input.button){
+    padding:15px 0;
+  }
+
+  .contact-form-container div:not(.contact-info-card){
+    max-width: 650px;
+    margin-right: 10vw;
+  }
+
+  .contact-info-card{
+    width: 80%;
+    max-width: 450px;
+    padding:5px 15px;
+    margin-top: 50px;
+    margin-left: auto;
+  }
+
+  .contact-map-container{
+    width: 85%;
+    margin: 50px auto;
+  }
+
+  .authentication-container{
     width: 35vw;
     margin-left:20px;
   }
 
   .contact-submit-button{
     margin-top:10px;
-  }
-
-  .contact-map-container{
-    margin-top:180px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 96vw;
   }
 
   .home-img{
@@ -1193,12 +1316,12 @@ input:not(input.button) {
 
   .home-hero-img1{
     top:115px;
-    left:130px;
+    left:20px;
   }
 
   .home-hero-img2{
     top:425px;
-    right: 130px;
+    right: 50px;
     margin-left: auto;
   }
 
@@ -1257,8 +1380,6 @@ input:not(input.button) {
     max-width: 1500px;
     border-width: 2px 0 2px 0 !important;
 
-    
-
   }
 
   .step-card{
@@ -1266,6 +1387,7 @@ input:not(input.button) {
     flex-direction: column;
     justify-content: flex-end;
     border-width: 0 2px 0 0 !important;
+    padding:0 35px 0 35px;
   }
 
 
@@ -1282,10 +1404,6 @@ input:not(input.button) {
     max-width: 250px;
   }
 
-  .step-card h2, .step-card p{
-    margin-left:5vw;
-  }
-
   .step-card-img{
     width: 250px;
   }
@@ -1297,8 +1415,90 @@ input:not(input.button) {
     margin-top:250px;
   }
 
+  .index-benefits .index-steps-container{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .index-benefits .index-steps-container .step-card{
+    flex-direction: row;
+    border-width: 2px 0 0 0 !important;
+  }
+
+  .index-benefits .index-steps-container .step-one{
+    flex-direction: row;
+    border-width: 0 !important;
+  }
+
+  .index-benefits .index-steps-container .step-card div{
+    margin:0 auto 0 300px;
+    width: 350px;
+  }
+
+  .index-benefits .index-steps-container .step-card div h2{
+    max-width: 100%;
+  }
+
+  .index-benefits{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .index-benefits .button{
+    margin:0 auto;
+  }
+
   .index-steps-heading{
     margin-bottom:-250px;
-    
+    position: relative;
+    margin: 0 auto -250px auto;
+    right: 375px;
+  }
+
+  .index-steps .index-steps-heading{
+    right: 355px;
+  }
+
+  .index-benefits .index-steps-container h2{
+    max-width: 250px;
+  }
+
+  .index-img-parent-container{
+    position: relative;
+    width: 100%;
+    top:-150px;
+  }
+
+  .index-app{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .index-app .index-steps-container{
+    border-width: 2px 0 0 0 !important;
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
+  .index-app .index-steps-container .step-card div{
+    margin:0 330px 0 auto;
+    position: relative;
+    right: 32px;
+
+  }
+
+  .index-app .index-steps-container h2{
+    max-width: 320px;
+  }
+
+  .index-app .index-steps-container p{
+    max-width: 320px;
+  }
+
+  .index-app .step-card{
+    border-width: 0 !important;
+    flex-direction: row-reverse;
+
   }
 }
