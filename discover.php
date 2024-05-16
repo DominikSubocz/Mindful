@@ -53,6 +53,74 @@ Components::pageHeader("Discover", ["style","font-awesome.min"], ["mobile-nav"])
 </div>
 
 <div class="events-container">
+    <h3>Recently Added Events</h3>
+    <div class="recent-events-container">
+        <div class="event-card">
+            <img class="event-img" src="images/rahadiansyah-dz1hrML7pmM-unsplash.jpg" alt="Woman wall climbing in a closed space">
+            <div class="event-icons">
+                <div class="icon-inline"><i class="fa fa-calendar" aria-hidden="true"></i><p>June 20, 2024</p></div>
+                <div class="icon-inline"><i class="fa fa-map-marker" aria-hidden="true"></i><p>Dundee, UK</p></div>
+            </div>
+            <div class="event-card-text">
+                <h3>Wall Climbing</h3>
+                <p>Wall climbing with other people at Dundee</p>
+            </div>
+            <div class="event-card-buttons">
+                <a href="#" class="button-gold">Join Event</a>
+                <a href="#" class="button-outline">Learn More</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img class="event-img" src="images/rahadiansyah-dz1hrML7pmM-unsplash.jpg" alt="Woman wall climbing in a closed space">
+            <div class="event-icons">
+                <div class="icon-inline"><i class="fa fa-calendar" aria-hidden="true"></i><p>June 20, 2024</p></div>
+                <div class="icon-inline"><i class="fa fa-map-marker" aria-hidden="true"></i><p>Dundee, UK</p></div>
+            </div>
+            <div class="event-card-text">
+                <h3>Wall Climbing</h3>
+                <p>Wall climbing with other people at Dundee</p>
+            </div>
+            <div class="event-card-buttons">
+                <a href="#" class="button-gold">Join Event</a>
+                <a href="#" class="button-outline">Learn More</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img class="event-img" src="images/rahadiansyah-dz1hrML7pmM-unsplash.jpg" alt="Woman wall climbing in a closed space">
+            <div class="event-icons">
+                <div class="icon-inline"><i class="fa fa-calendar" aria-hidden="true"></i><p>June 20, 2024</p></div>
+                <div class="icon-inline"><i class="fa fa-map-marker" aria-hidden="true"></i><p>Dundee, UK</p></div>
+            </div>
+            <div class="event-card-text">
+                <h3>Wall Climbing</h3>
+                <p>Wall climbing with other people at Dundee</p>
+            </div>
+            <div class="event-card-buttons">
+                <a href="#" class="button-gold">Join Event</a>
+                <a href="#" class="button-outline">Learn More</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img class="event-img" src="images/rahadiansyah-dz1hrML7pmM-unsplash.jpg" alt="Woman wall climbing in a closed space">
+            <div class="event-icons">
+                <div class="icon-inline"><i class="fa fa-calendar" aria-hidden="true"></i><p>June 20, 2024</p></div>
+                <div class="icon-inline"><i class="fa fa-map-marker" aria-hidden="true"></i><p>Dundee, UK</p></div>
+            </div>
+            <div class="event-card-text">
+                <h3>Wall Climbing</h3>
+                <p>Wall climbing with other people at Dundee</p>
+            </div>
+            <div class="event-card-buttons">
+                <a href="#" class="button-gold">Join Event</a>
+                <a href="#" class="button-outline">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <h3>May 2024</h3>
     <div class="recent-events-container">
         <div class="event-card">
             <img class="event-img" src="images/rahadiansyah-dz1hrML7pmM-unsplash.jpg" alt="Woman wall climbing in a closed space">

@@ -1583,8 +1583,8 @@ input:not(input.button) {
   }
 
   .event-img{
-    width: 385px;
-    height: 265px;
+    width: 345px;
+    height: 205px;
     object-fit: cover;
   }
 
@@ -1615,17 +1615,17 @@ input:not(input.button) {
   }
 
   .event-icons p{
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .event-card .button-gold{
-    font-size: 14px;
+    font-size: 12px;
 
   }
 
   .event-card .button-outline{
     margin-left: 20px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .event-icons :nth-child(1){
@@ -1665,7 +1665,12 @@ input:not(input.button) {
   .recent-events-container{
     display: flex;
     justify-content: center;
-    gap:0 32px;
+    gap:0 45px;
+  }
+
+  .events-container h3{
+    margin:35px auto;
+    max-width: 1600px;
   }
   
 }
