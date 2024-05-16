@@ -5,6 +5,16 @@
 --pear: #C9D541ff;
 --gold-metallic: #E4BA4Fff; */
 
+.event-card{
+  background-color:#E7E7E7ff;
+  border-radius: 5px;
+}
+
+.event-icons i {
+  color: #E4BA4Fff;
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -30,6 +40,26 @@ body, button, input, textarea, select {
   font-weight: bold;
   padding: 8px 16px;
   text-decoration: none;
+}
+
+.button-gold{
+  background-color: #E4BA4Fff;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  padding: 14px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button-outline{
+  color: black;
+  display: inline-block;
+  font-weight: bold;
+  padding: 14px 24px;
+  border: 1px solid black;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 input, textarea{
@@ -346,6 +376,17 @@ input:not(input.button) {
   border-radius: 10px;
   height: fit-content;
 }
+
+.icon-inline{
+  display: flex;
+  align-items: center;
+}
+
+.event-icons{
+  display: flex;
+  gap:0 16px;
+}
+
 
 
 @media screen and (max-width:450px){
@@ -991,6 +1032,18 @@ input:not(input.button) {
     overflow-x: hidden;
   }
 
+  h1{
+    font-size: 48px;
+  }
+
+  h2{
+    font-size: 32px;
+  }
+
+  h3{
+    font-size: 24px;
+  }
+
   .button-form .button {
     text-align: center;
     max-width: 250px;
@@ -1509,6 +1562,7 @@ input:not(input.button) {
   .discover-steps .steps-container{
     width: 1600px;
     max-width: 1600px;
+    margin-top: 150px;
   }
 
   .discover-steps .step-card{
@@ -1529,6 +1583,89 @@ input:not(input.button) {
   }
 
   .event-img{
-    width: 350px;
+    width: 385px;
+    height: 265px;
+    object-fit: cover;
   }
+
+  .event-card{
+    display: inline-block;
+    padding:10px;
+  }
+
+  .event-card p {
+    font-size: 14px;
+  }
+
+  .event-card h3{
+   margin: 0;
+  }
+
+  .event-card-text{
+    margin: 10px 0 25px 8px;
+  }
+
+  .event-card-buttons{
+    margin-left: 8px;
+  }
+
+  .event-card i{
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .event-icons p{
+    font-size: 14px;
+  }
+
+  .event-card .button-gold{
+    font-size: 14px;
+
+  }
+
+  .event-card .button-outline{
+    margin-left: 20px;
+    font-size: 14px;
+  }
+
+  .event-icons :nth-child(1){
+    margin-left: 5px;
+  }
+
+  .event-icons :nth-child(2){
+   margin-right: 25px;
+  }
+
+  .event-card h3, .event-card p{
+    max-width: 450px;
+  }
+
+  .discover-content{
+    margin: 75px auto 0 auto;
+    position: relative;
+    width: 1600px;
+    max-width: 1600px;
+    display: flex;
+    align-items: center;
+  }
+  .discover-content-img{
+    width: 255px;
+    margin-left: auto;
+    margin-right: 175px;
+  }
+
+  .discover-content h1{
+    margin:0;
+  }
+  .discover-content p{
+    margin: 5px 0;
+    max-width: 450px;
+  }
+
+  .recent-events-container{
+    display: flex;
+    justify-content: center;
+    gap:0 32px;
+  }
+  
 }

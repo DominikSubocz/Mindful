@@ -2,15 +2,21 @@
 
 require("classes/components.php");
 
-Components::pageHeader("Discover", ["style"], ["mobile-nav"]);
+Components::pageHeader("Discover", ["style","font-awesome.min"], ["mobile-nav"]);
 
 ?>
 
-<h1>Discover Mindful</h1>
-<p>
-    Pause, breathe, notice. Embrace each moment with mindful
-    presence and gentle awareness.
-</p>
+<div class="discover-content">
+    <div>
+        <h1>Discover Mindful</h1>
+        <p>
+            Pause, breathe, notice. Embrace each moment with mindful
+            presence and gentle awareness.
+        </p>
+    </div>
+
+    <img class="discover-content-img" src="images/quirky-eye-looking-through-magnifying-glass-1.png" alt="Eye looking through magnifying glass">
+</div>
 
 <div class="discover-steps steps-holder card-container">
 
@@ -49,11 +55,67 @@ Components::pageHeader("Discover", ["style"], ["mobile-nav"]);
 <div class="events-container">
     <div class="recent-events-container">
         <div class="event-card">
-            <h3>Wall Climbing</h3>
-            <p>Wall climbing with other people at Dundee</p>
             <img class="event-img" src="images/rahadiansyah-dz1hrML7pmM-unsplash.jpg" alt="Woman wall climbing in a closed space">
-            <a href="#" class="button">Join Event</a>
-            <a href="#" class="button">Learn More</a>
+            <div class="event-icons">
+                <div class="icon-inline"><i class="fa fa-calendar" aria-hidden="true"></i><p>June 20, 2024</p></div>
+                <div class="icon-inline"><i class="fa fa-map-marker" aria-hidden="true"></i><p>Dundee, UK</p></div>
+            </div>
+            <div class="event-card-text">
+                <h3>Wall Climbing</h3>
+                <p>Wall climbing with other people at Dundee</p>
+            </div>
+            <div class="event-card-buttons">
+                <a href="#" class="button-gold">Join Event</a>
+                <a href="#" class="button-outline">Learn More</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img class="event-img" src="images/rahadiansyah-dz1hrML7pmM-unsplash.jpg" alt="Woman wall climbing in a closed space">
+            <div class="event-icons">
+                <div class="icon-inline"><i class="fa fa-calendar" aria-hidden="true"></i><p>June 20, 2024</p></div>
+                <div class="icon-inline"><i class="fa fa-map-marker" aria-hidden="true"></i><p>Dundee, UK</p></div>
+            </div>
+            <div class="event-card-text">
+                <h3>Wall Climbing</h3>
+                <p>Wall climbing with other people at Dundee</p>
+            </div>
+            <div class="event-card-buttons">
+                <a href="#" class="button-gold">Join Event</a>
+                <a href="#" class="button-outline">Learn More</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img class="event-img" src="images/rahadiansyah-dz1hrML7pmM-unsplash.jpg" alt="Woman wall climbing in a closed space">
+            <div class="event-icons">
+                <div class="icon-inline"><i class="fa fa-calendar" aria-hidden="true"></i><p>June 20, 2024</p></div>
+                <div class="icon-inline"><i class="fa fa-map-marker" aria-hidden="true"></i><p>Dundee, UK</p></div>
+            </div>
+            <div class="event-card-text">
+                <h3>Wall Climbing</h3>
+                <p>Wall climbing with other people at Dundee</p>
+            </div>
+            <div class="event-card-buttons">
+                <a href="#" class="button-gold">Join Event</a>
+                <a href="#" class="button-outline">Learn More</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img class="event-img" src="images/rahadiansyah-dz1hrML7pmM-unsplash.jpg" alt="Woman wall climbing in a closed space">
+            <div class="event-icons">
+                <div class="icon-inline"><i class="fa fa-calendar" aria-hidden="true"></i><p>June 20, 2024</p></div>
+                <div class="icon-inline"><i class="fa fa-map-marker" aria-hidden="true"></i><p>Dundee, UK</p></div>
+            </div>
+            <div class="event-card-text">
+                <h3>Wall Climbing</h3>
+                <p>Wall climbing with other people at Dundee</p>
+            </div>
+            <div class="event-card-buttons">
+                <a href="#" class="button-gold">Join Event</a>
+                <a href="#" class="button-outline">Learn More</a>
+            </div>
         </div>
     </div>
 </div>
