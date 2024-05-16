@@ -11,11 +11,11 @@ $location = "";
 ?>
 
 <div class="index-content">
-    <div class="index-img-parent-container">
+    <div class="img-parent-container">
         <img src="images/dizzy-video-call.png" alt="Cover of woman chatting with a man thru phone."
             class="home-img home-hero-img1">
     </div>
-    <div class="index-img-parent-container">
+    <div class="img-parent-container">
         <img src="images/juicy-young-woman-sitting-in-lotus-position-1.png" alt="Woman with ginger hair sitting medidating."
             class="home-img home-hero-img2">
     </div>
@@ -35,12 +35,12 @@ $location = "";
 
 </div>
 
-<div class="index-steps index-card-container">
-    <div class="index-steps-heading">
+<div class="steps-holder card-container">
+    <div class="steps-heading">
         <h2>Explore Mindful Topics</h2>
     </div>
 
-    <div class="index-steps-container">
+    <div class="steps-container">
         <div class="step-card step-one">
             <img src="images/isometric-woman-meditating-at-home.png" alt="Woman sitting meditating at home."
                 class="step-card-img">
@@ -72,12 +72,12 @@ $location = "";
 
 </div>
 
-<div class="index-benefits index-card-container">
-    <div class="index-steps-heading">
+<div class="benefits-container card-container">
+    <div class="steps-heading">
             <h2>Benefits of Mindful</h2>
     </div>
 
-    <div class="index-steps-container">
+    <div class="steps-container">
         <div class="step-card step-one">
             <img src="images/tiny-people-talking-near-the-cooler-in-the-office.png" alt="Woman sitting meditating at home."
                 class="step-card-img">
@@ -115,12 +115,12 @@ $location = "";
     </div>
 </div>
 
-<div class="index-app index-card-container">
-    <div class="index-steps-heading">
+<div class="app-container card-container">
+    <div class="steps-heading">
         <h2>Download Our App</h2>
     </div>
 
-    <div class="index-steps-container">
+    <div class="steps-container">
         <div class="step-card step-one">
             <img src="images/isometric-woman-meditating-at-home.png" alt="Woman sitting meditating at home." class="step-card-img">
             <div>

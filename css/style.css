@@ -337,7 +337,7 @@ input:not(input.button) {
   flex: 1;
 }
 
-.step-card, .index-steps-container{
+.step-card, .steps-container{
   border: 2px solid #e7e7e7;
 }
 
@@ -422,7 +422,7 @@ input:not(input.button) {
     padding: 5px 10px;
   }
 
-  .index-steps-container{
+  .steps-container{
     margin-top:250px;
     display: flex;
     flex-direction: column;
@@ -453,25 +453,25 @@ input:not(input.button) {
     width: 250px;
   }
 
-  .index-card-container{
+  .card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .index-steps{
+  .steps-holder{
     margin-top:250px;
   }
 
-  .index-steps-heading{
+  .steps-heading{
     margin-bottom:-250px;
   }
 
-  .index-benefits, .index-app{
+  .benefits-container, .app-container{
     margin-top:150px;
   }
 
-  .index-benefits  .button{
+  .benefits-container  .button{
     margin-bottom:30px;
   }
   
@@ -596,7 +596,7 @@ input:not(input.button) {
     width: 55px;
   }
 
-  .index-steps-container{
+  .steps-container{
     margin-top:250px;
     display: flex;
     flex-direction: column;
@@ -622,25 +622,25 @@ input:not(input.button) {
     width: 250px;
   }
 
-  .index-steps{
+  .steps-holder{
     margin-top:250px;
   }
 
-  .index-card-container{
+  .card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .index-steps-heading{
+  .steps-heading{
     margin-bottom:-250px;
   }
 
-  .index-benefits, .index-app{
+  .benefits-container, .app-container{
     margin-top:150px;
   }
 
-  .index-benefits  .button{
+  .benefits-container  .button{
     margin-bottom:30px;
   }
 
@@ -902,7 +902,7 @@ input:not(input.button) {
     margin:0 auto;
   }
 
-   .index-steps-container{
+   .steps-container{
     margin-top:250px;
     display: flex;
     flex-direction: column;
@@ -928,33 +928,33 @@ input:not(input.button) {
     width: 250px;
   }
 
-  .index-steps{
+  .steps-holder{
     margin-top:250px;
   }
 
-  .index-card-container{
+  .card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .index-steps-heading{
+  .steps-heading{
     margin-bottom:-250px;
   }
 
-  .index-benefits, .index-app{
+  .benefits-container, .app-container{
     margin-top:150px;
   }
 
-  .index-benefits  .button{
+  .benefits-container  .button{
     margin-bottom:30px;
   }
 
-  .index-steps-heading{
+  .steps-heading{
     margin-bottom:-250px;
   }
 
-  .index-img-parent-container{
+  .img-parent-container{
     position: relative;
     width: 100%;
     top:-250px;
@@ -1370,7 +1370,7 @@ input:not(input.button) {
     margin:0 auto;
   }
 
-  .index-steps-container{
+  .steps-container{
     margin: 250px auto 0 auto;
     overflow-y: hidden;
     display: grid; /* grid containers */
@@ -1408,97 +1408,127 @@ input:not(input.button) {
     width: 250px;
   }
 
-  .index-steps{
+  .steps-holder{
     display: flex;
     flex-direction: column;
     align-items: start;
     margin-top:250px;
   }
 
-  .index-benefits .index-steps-container{
+  .benefits-container .steps-container{
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
 
-  .index-benefits .index-steps-container .step-card{
+  .benefits-container .steps-container .step-card{
     flex-direction: row;
     border-width: 2px 0 0 0 !important;
   }
 
-  .index-benefits .index-steps-container .step-one{
+  .benefits-container .steps-container .step-one{
     flex-direction: row;
     border-width: 0 !important;
   }
 
-  .index-benefits .index-steps-container .step-card div{
+  .benefits-container .steps-container .step-card div{
     margin:0 auto 0 300px;
     width: 350px;
   }
 
-  .index-benefits .index-steps-container .step-card div h2{
+  .benefits-container .steps-container .step-card div h2{
     max-width: 100%;
   }
 
-  .index-benefits{
+  .benefits-container{
     display: flex;
     flex-direction: column;
     align-items: start;
   }
 
-  .index-benefits .button{
+  .benefits-container .button{
     margin:0 auto;
   }
 
-  .index-steps-heading{
+  .steps-heading{
     margin-bottom:-250px;
     position: relative;
     margin: 0 auto -250px auto;
     right: 375px;
   }
 
-  .index-steps .index-steps-heading{
+  .steps-holder .steps-heading{
     right: 355px;
   }
 
-  .index-benefits .index-steps-container h2{
+  .benefits-container .steps-container h2{
     max-width: 250px;
   }
 
-  .index-img-parent-container{
+  .img-parent-container{
     position: relative;
     width: 100%;
     top:-150px;
   }
 
-  .index-app{
+  .app-container{
     display: flex;
     flex-direction: column;
   }
 
-  .index-app .index-steps-container{
+  .app-container .steps-container{
     border-width: 2px 0 0 0 !important;
     grid-template-columns: repeat(1, 1fr);
 
   }
 
-  .index-app .index-steps-container .step-card div{
+  .app-container .steps-container .step-card div{
     margin:0 330px 0 auto;
     position: relative;
     right: 32px;
 
   }
 
-  .index-app .index-steps-container h2{
+  .app-container .steps-container h2{
     max-width: 320px;
   }
 
-  .index-app .index-steps-container p{
+  .app-container .steps-container p{
     max-width: 320px;
   }
 
-  .index-app .step-card{
+  .app-container .step-card{
     border-width: 0 !important;
     flex-direction: row-reverse;
 
+  }
+
+  .discover-steps{
+    margin-top:0;
+  }
+
+  .discover-steps .steps-container{
+    width: 1600px;
+    max-width: 1600px;
+  }
+
+  .discover-steps .step-card{
+    text-align: center;
+    align-items: center;
+  }
+
+  .discover-steps .step-card p{
+    max-width: 350px;
+  }
+
+  .discover-steps .step-card img{
+    width: 275px;
+  }
+
+  .discover-steps .step-two img{
+    width: 375px;
+  }
+
+  .event-img{
+    width: 350px;
   }
 }
