@@ -5,16 +5,6 @@
 --pear: #C9D541ff;
 --gold-metallic: #E4BA4Fff; */
 
-.event-card{
-  background-color:#E7E7E7ff;
-  border-radius: 5px;
-}
-
-.event-icons i {
-  color: #E4BA4Fff;
-  font-weight: bold;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -32,6 +22,8 @@ body, button, input, textarea, select {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 16px;
 }
+
+
 
 .button {
   background-color:rgb(237, 252, 74);
@@ -377,19 +369,74 @@ input:not(input.button) {
   height: fit-content;
 }
 
-.icon-inline{
+.event-cards-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.event-cards-container{
+    width: 90%;
+    margin: 2rem auto;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    
+}
+
+.event-card {
+  width: 100%;
+  cursor: default;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #E7E7E7ff;
+  transition: transform 0.3s ease-in-out;
+  
+}
+
+.event-card-img {
+  width: 100%;
+  height: 15rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.25rem;
+  margin:0;
+}
+
+.event-card-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.event-card-title {
+  text-transform: capitalize;
+  margin: 0.75rem 0;
+}
+
+.event-card-icons{
   display: flex;
   align-items: center;
 }
 
-.event-icons{
-  display: flex;
-  gap:0 16px;
+.event-card-icons i {
+  color: #E4BA4Fff;
+  font-weight: bold;
 }
 
 
 
+
+
+
+
 @media screen and (max-width:450px){
+
+  p{
+    font-size: 14px !important;
+  }
+
   .authentication-container, .contact-form-container, .contact-map-container{
     width: 75vw !important;
     margin-left:20px;
@@ -535,12 +582,23 @@ input:not(input.button) {
     padding:5px;
     margin-top:50px;
   }
+
+  .discover-content p{
+    width: 250px;
+  }
+
+  .event-card-icons i {
+    font-size: 22px;
+    margin:0 10px 0 10px;
+  }
+
   
 }
 
 
 @media screen and (min-width: 451px) and (max-width: 726px) {
 
+  
   .footer-wrapper{
     display: flex;
     flex-direction: column;
@@ -689,6 +747,38 @@ input:not(input.button) {
     padding:5px;
     margin-top:50px;
   }
+
+  .discover-content{
+    display: flex;
+  }
+
+  .discover-content p{
+    width: 275px;
+  }
+
+  .discover-content-img{
+    width: 175px;
+    margin-left: auto;
+    margin-top: -10px;
+  }
+
+  .discover-steps{
+    margin-top: 0;
+  }
+
+  .discover-steps .step-one{
+    border-width: 0;
+  }
+
+  .discover-steps .steps-container{
+    margin-top: 150px;
+  }
+
+  .event-card-icons i {
+    font-size: 22px;
+    margin:0 10px 0 10px;
+  }
+
 }
 /* MOBILE AND TABLET */
 @media screen and (min-width: 726px) and (max-width: 949px) {
@@ -698,7 +788,13 @@ input:not(input.button) {
     such as the page navigation.
   */
 
+  h2{
+    font-size: 30px;
+  }
 
+  h3{
+    font-size: 24px;
+  }
 
   .mobile-top{
     width: 90vw;
@@ -1018,6 +1114,43 @@ input:not(input.button) {
     margin: 50px auto;
   }
 
+  .discover-content{
+    display: flex;
+  }
+
+  .discover-content p{
+    width: 275px;
+  }
+
+  .discover-content-img{
+    width: 175px;
+    margin-left: auto;
+    margin-top: -10px;
+  }
+
+  .discover-steps{
+    margin-top: 0;
+  }
+
+  .discover-steps .step-one{
+    border-width: 0;
+  }
+
+  .discover-steps .steps-container{
+    margin-top: 150px;
+  }
+
+  .content-wrapper{
+    margin:0 50px;
+  }
+
+  .event-card-icons i {
+    font-size: 22px;
+    margin:0 10px 0 10px;
+  }
+
+
+
 }
 
 /* @media screen and (min-width:950px) and (max-width:1600px){
@@ -1026,10 +1159,20 @@ input:not(input.button) {
   }
 } */
 /* DESKTOP */
+
+
 @media screen and (min-width: 950px) {
 
   body, html{
     overflow-x: hidden;
+  }
+
+  .content-wrapper{
+    margin:0 50px;
+  }
+
+  .page-header, .page-footer{
+    padding:16px 0;
   }
 
   h1{
@@ -1560,7 +1703,7 @@ input:not(input.button) {
   }
 
   .discover-steps .steps-container{
-    width: 1600px;
+    align-items: baseline;
     max-width: 1600px;
     margin-top: 150px;
   }
@@ -1575,83 +1718,22 @@ input:not(input.button) {
   }
 
   .discover-steps .step-card img{
-    width: 275px;
+    width: 175px;
   }
 
   .discover-steps .step-two img{
-    width: 375px;
-  }
-
-  .event-img{
-    width: 345px;
-    height: 205px;
-    object-fit: cover;
-  }
-
-  .event-card{
-    display: inline-block;
-    padding:10px;
-  }
-
-  .event-card p {
-    font-size: 14px;
-  }
-
-  .event-card h3{
-   margin: 0;
-  }
-
-  .event-card-text{
-    margin: 10px 0 25px 8px;
-  }
-
-  .event-card-buttons{
-    margin-left: 8px;
-  }
-
-  .event-card i{
-    font-size: 20px;
-    margin-right: 10px;
-  }
-
-  .event-icons p{
-    font-size: 12px;
-  }
-
-  .event-card .button-gold{
-    font-size: 12px;
-
-  }
-
-  .event-card .button-outline{
-    margin-left: 20px;
-    font-size: 12px;
-  }
-
-  .event-icons :nth-child(1){
-    margin-left: 5px;
-  }
-
-  .event-icons :nth-child(2){
-   margin-right: 25px;
-  }
-
-  .event-card h3, .event-card p{
-    max-width: 450px;
+    width: 275px;
   }
 
   .discover-content{
     margin: 75px auto 0 auto;
     position: relative;
-    width: 1600px;
-    max-width: 1600px;
     display: flex;
     align-items: center;
   }
   .discover-content-img{
     width: 255px;
-    margin-left: auto;
-    margin-right: 175px;
+    margin-left: 20%;
   }
 
   .discover-content h1{
@@ -1662,15 +1744,93 @@ input:not(input.button) {
     max-width: 450px;
   }
 
-  .recent-events-container{
-    display: flex;
-    justify-content: center;
-    gap:0 45px;
+  .event-card-icons i {
+    font-size: 22px;
+    margin:0 10px 0 10px;
   }
 
-  .events-container h3{
-    margin:35px auto;
-    max-width: 1600px;
+  .event-card-buttons .button-outline{
+    margin-left:20px;
   }
+
+  .event-wrapper-heading{
+    text-align: center;
+  }
+
+  .recent-events-heading{
+    margin-left: 85px;
+    text-align: left;
+  }
+
+  .month-buttons{
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .months-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:16px;
+  }
+
+
   
+}
+
+@media screen and (min-width:1200px){
+
+  .steps-container{
+    align-items: baseline;
+    overflow-x: hidden;
+  }
+
+  .discover-steps .step-card img{
+    width: 225px;
+  }
+
+  .discover-steps .step-two img{
+    width: 355px;
+  }
+
+  .step-card p {
+    width: 250px;
+    margin-bottom: 0;
+  }
+
+  .discover-content-img{
+    margin-left:35%;
+  }
+}
+
+@media screen and (min-width:1400px){
+
+  .steps-container{
+    align-items: baseline;
+    overflow-x: hidden;
+    gap:0 32px;
+  }
+
+  .step-card p {
+    width: 350px;
+    margin-bottom: 0 !important;
+  }
+
+  .step-card img{
+    margin-bottom: auto;
+  }
+
+  .discover-content{
+    margin: 75px auto 0 auto;
+  }
+
+  .discover-content-img{
+    margin-left:42%;
+  }
+}
+
+@media screen and (min-width:1600px){
+  .discover-content-img{
+    margin-left:48%;
+  }
 }
