@@ -1140,7 +1140,7 @@ input:not(input.button) {
     margin-top: 150px;
   }
 
-  .content-wrapper{
+  .discover-content{
     margin:0 50px;
   }
 
@@ -1167,9 +1167,6 @@ input:not(input.button) {
     overflow-x: hidden;
   }
 
-  .content-wrapper{
-    margin:0 50px;
-  }
 
   .page-header, .page-footer{
     padding:16px 0;
@@ -1575,7 +1572,6 @@ input:not(input.button) {
     grid-auto-flow: column; /* in column direction */
     max-width: 1500px;
     border-width: 2px 0 2px 0 !important;
-
   }
 
   .step-card{
@@ -1714,7 +1710,7 @@ input:not(input.button) {
   }
 
   .discover-steps .step-card p{
-    max-width: 350px;
+    max-width: 300px;
   }
 
   .discover-steps .step-card img{
@@ -1726,7 +1722,7 @@ input:not(input.button) {
   }
 
   .discover-content{
-    margin: 75px auto 0 auto;
+    margin:0 50px;
     position: relative;
     display: flex;
     align-items: center;
@@ -1778,6 +1774,19 @@ input:not(input.button) {
   
 }
 
+@media screen and (min-width:1000px){
+
+
+  .discover-steps .step-card img{
+    width: 175px;
+  }
+
+  .discover-steps .step-two img{
+    width: 275px;
+  }
+}
+
+
 @media screen and (min-width:1200px){
 
   .steps-container{
@@ -1786,15 +1795,15 @@ input:not(input.button) {
   }
 
   .discover-steps .step-card img{
-    width: 225px;
+    width: 205px;
   }
 
   .discover-steps .step-two img{
-    width: 355px;
+    width: 305px;
   }
 
   .step-card p {
-    width: 250px;
+    width: 275px;
     margin-bottom: 0;
   }
 
@@ -1811,6 +1820,7 @@ input:not(input.button) {
     gap:0 32px;
   }
 
+
   .step-card p {
     width: 350px;
     margin-bottom: 0 !important;
@@ -1821,7 +1831,7 @@ input:not(input.button) {
   }
 
   .discover-content{
-    margin: 75px auto 0 auto;
+    margin:0 75px;
   }
 
   .discover-content-img{
@@ -1832,5 +1842,9 @@ input:not(input.button) {
 @media screen and (min-width:1600px){
   .discover-content-img{
     margin-left:48%;
+  }
+
+  .discover-content{
+    margin:0 90px;
   }
 }

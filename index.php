@@ -40,7 +40,7 @@ $location = "";
         <h2>Explore Mindful Topics</h2>
     </div>
 
-    <div class="steps-container">
+    <div class="index-steps steps-container">
         <div class="step-card step-one">
             <img src="images/isometric-woman-meditating-at-home.png" alt="Woman sitting meditating at home."
                 class="step-card-img">
