@@ -592,6 +592,28 @@ input:not(input.button) {
     margin:0 10px 0 10px;
   }
 
+  .months-form{
+    display: flex;
+    justify-content: center;
+    gap:16px;
+  }
+
+  .months-form .button-gold , .months-form .button-outline{
+    padding:20px 30px !important;
+  }
+
+  .months-form .button-gold{
+    width: 95px;
+  }
+
+  .months-form .button-outline{
+    width: 125px;
+  }
+
+  .event-wrapper-heading{
+    text-align: center;
+  }
+
   
 }
 
@@ -1564,21 +1586,18 @@ input:not(input.button) {
   }
 
   .steps-container{
-    margin: 250px auto 0 auto;
-    overflow-y: hidden;
-    display: grid; /* grid containers */
-    grid-template-columns: repeat(3, 1fr); /* three columns */
-    grid-template-rows: repeat(1, 1fr); /* one rows */
-    grid-auto-flow: column; /* in column direction */
-    max-width: 1500px;
-    border-width: 2px 0 2px 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-width: 0;
+    text-align: center;
   }
 
   .step-card{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    border-width: 0 2px 0 0 !important;
+    border-width: 2px 0 0 0 !important;
     padding:0 35px 0 35px;
   }
 
@@ -1587,29 +1606,34 @@ input:not(input.button) {
     margin:0 auto;
   }
 
-  .step-three{
-    border-width: 0 0 0 0 !important;
-
+  .step-one{
+    border-width: 0 !important;
   }
 
   .step-card p{
-    max-width: 250px;
+    max-width: 395px;
   }
 
   .step-card-img{
-    width: 250px;
+    width: 300px;
   }
 
   .steps-holder{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     margin-top:250px;
+  }
+
+  .benefits-container{
+    margin:75px 0;
   }
 
   .benefits-container .steps-container{
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .benefits-container .steps-container .step-card{
@@ -1641,11 +1665,10 @@ input:not(input.button) {
     margin:0 auto;
   }
 
-  .steps-heading{
-    margin-bottom:-250px;
+  .benefits-container .steps-heading, .app-container .steps-heading{
     position: relative;
-    margin: 0 auto -250px auto;
-    right: 375px;
+    margin: 0 auto -10px auto;
+    right: 315px;
   }
 
   .steps-holder .steps-heading{
@@ -1665,6 +1688,8 @@ input:not(input.button) {
   .app-container{
     display: flex;
     flex-direction: column;
+    max-width: 90%;
+    margin:0 auto;
   }
 
   .app-container .steps-container{
@@ -1699,7 +1724,7 @@ input:not(input.button) {
   }
 
   .discover-steps .steps-container{
-    align-items: baseline;
+    align-items: center;
     max-width: 1600px;
     margin-top: 150px;
   }
@@ -1714,11 +1739,11 @@ input:not(input.button) {
   }
 
   .discover-steps .step-card img{
-    width: 175px;
+    width: 275px;
   }
 
   .discover-steps .step-two img{
-    width: 275px;
+    width: 375px;
   }
 
   .discover-content{
@@ -1774,36 +1799,51 @@ input:not(input.button) {
   
 }
 
-@media screen and (min-width:1000px){
-
-
-  .discover-steps .step-card img{
-    width: 175px;
-  }
-
-  .discover-steps .step-two img{
-    width: 275px;
-  }
-}
-
 
 @media screen and (min-width:1200px){
 
   .steps-container{
+    margin: 50px auto 0 auto;
+    overflow-y: hidden;
+    display: grid; /* grid containers */
+    grid-template-columns: repeat(3, 1fr); /* three columns */
+    grid-template-rows: repeat(1, 1fr); /* one rows */
+    grid-auto-flow: column; /* in column direction */
+    max-width: 1500px;
+    border-width: 2px 0 2px 0 !important;
     align-items: baseline;
-    overflow-x: hidden;
+  }
+  
+  .event-cards-wrapper{
+    margin:50px 0;
+  }
+
+  .step-card{
+    border-width: 0 2px 0 0 !important;
+  }
+
+  .step-three{
+    border-width: 0 !important;
   }
 
   .discover-steps .step-card img{
-    width: 205px;
+    width: 180px;
   }
 
   .discover-steps .step-two img{
     width: 305px;
   }
 
+  .index-steps .step-card img{
+    width: 200px;
+  }
+
+  .index-steps .step-two img{
+    width: 250px;
+  }
+
   .step-card p {
-    width: 275px;
+    width: 300px;
     margin-bottom: 0;
   }
 
