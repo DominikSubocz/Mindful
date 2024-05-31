@@ -11,7 +11,7 @@ class SQL {
    */
   public static $getBook = "SELECT * FROM books WHERE book_id = ?";
 
-  public static $getUser = "SELECT user_id, username, password, user_role FROM bookstore.users WHERE username = ?";
+  public static $getUser = "SELECT user_id, username, password, user_role FROM mindful.users WHERE username = ?";
 
   public static $createUser = "INSERT INTO users (username, email, password) VALUES (?,?,?)";
 

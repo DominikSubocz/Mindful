@@ -6,7 +6,32 @@ require ("classes/components.php");
 
 Components::pageHeader("Login", ["style"], ["mobile-nav"]);
 
-$location = "";
+$articleName = "";
+$searchPlaceholder = "Search Articles";
+
+if ($_SERVER["REQUEST_METHOD"] ==="POST" && isset($_POST["searchSubmit"])) {
+
+    if (empty($_POST["article_name"])) {
+        $searchPlaceholder = "Enter Keyword or Name"; 
+    } else {
+        $articleName = test_input($_POST["article_name"]); 
+
+        var_dump("I will look for article named: ". $articleName);
+
+        
+        
+    }
+
+}
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 
 ?>
 
@@ -26,7 +51,7 @@ $location = "";
     <form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="form">
 
         <div class="search-form-container">
-            <input type="text" name="location" placeholder="Search articles" value="<?php echo $location; ?>">
+            <input type="text" name="article_name" placeholder="<?php echo $searchPlaceholder; ?>" value="<?php echo $articleName; ?>">
             <input class="button" type="submit" name="searchSubmit" value="Search">
         </div>
 

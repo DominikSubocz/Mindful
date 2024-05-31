@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS bookstore;
-CREATE DATABASE bookstore;
+DROP DATABASE IF EXISTS mindful;
+CREATE DATABASE mindful;
 
-CREATE TABLE bookstore.books (
+CREATE TABLE mindful.books (
   book_id INT PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(128) NOT NULL,
   author VARCHAR(48) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE bookstore.books (
   filename VARCHAR(64)
 );
 
-INSERT INTO bookstore.books (title, author, price, filename) VALUES
+INSERT INTO mindful.books (title, author, price, filename) VALUES
 ("Complete Fairy Tales", "Hans Christian Andersen", 8.99, "fairy-tales.jpg"),
 ("Faust", "Johann Wolfgang von Goethe", 10.49, "faust.jpg"),
 ("Great Expectations", "Charles Dickens", 7.99, "great-expectations.jpg"),
@@ -30,7 +30,7 @@ INSERT INTO bookstore.books (title, author, price, filename) VALUES
 ("Mrs Dalloway", "Virginia Woolf", 9.99, "mrs-dalloway.jpg"),
 ("Nineteen Eighty-Four", "George Orwell", 8.99, "nineteen-eighty-four.jpg");
 
-CREATE TABLE bookstore.users (
+CREATE TABLE mindful.users (
   user_id INT PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(32) UNIQUE NOT NULL,
   email VARCHAR(128) NOT NULL,
@@ -38,13 +38,13 @@ CREATE TABLE bookstore.users (
   user_role VARCHAR(24) NOT NULL DEFAULT "Member"
 );
 
-CREATE TABLE bookstore.postcodes (
+CREATE TABLE mindful.postcodes (
   postcode VARCHAR(8) PRIMARY KEY,
   town VARCHAR(32) NOT NULL,
   county VARCHAR(32) NOT NULL
 );
 
-CREATE TABLE bookstore.orders (
+CREATE TABLE mindful.orders (
   order_id INT NOT NULL,
   book_id INT NOT NULL,
   user_id INT NOT NULL,
@@ -60,6 +60,6 @@ CREATE TABLE bookstore.orders (
   FOREIGN KEY (postcode) REFERENCES postcodes(postcode)
 );
 
-UPDATE bookstore.users
+UPDATE mindful.users
 SET user_role = 'Admin'
 WHERE user_id = 1;
