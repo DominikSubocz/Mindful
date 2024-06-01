@@ -3,6 +3,7 @@
 session_start();
 
 require ("classes/components.php");
+require("classes/utils.php");
 
 Components::pageHeader("Login", ["style"], ["mobile-nav"]);
 
@@ -16,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] ==="POST" && isset($_POST["searchSubmit"])) {
     } else {
         $articleName = test_input($_POST["article_name"]); 
 
-        var_dump("I will look for article named: ". $articleName);
+        header("Location: " . Utils::$projectFilePath . "/article_search_results.php?title=".$articleName);
 
         
         

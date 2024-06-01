@@ -6,15 +6,6 @@
 
     <h3><?php echo $author; ?></h3>
 
-
-    <form
-      method="POST"
-      action="<?php echo $_SERVER["PHP_SELF"]; ?>?id=<?php echo $bookId; ?>&action=add"
-      class="button-form"
-    >
-      <input class="button" type="submit" name ="addToBasketButton" value="Add to Basket">
-    </form>
-
     <?php if (isset($_SESSION["user_role"]) && $_SESSION["user_role"] === "Admin"): ?>
 
     <div class="button-group">

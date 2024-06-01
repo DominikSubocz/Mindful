@@ -164,4 +164,16 @@ class Book{
             require("components/basket-empty.php");
         }
     }
+
+    public static function searchArticleName($title){
+        $conn = Connection::connect();
+
+        $stmt = $conn->prepare(SQL::$getArticleSearchResult);
+        $stmt->execute(['%'.$title.'%']);
+        $articles = $stmt->fetchAll();
+        
+        $conn = null;
+
+        return $articles;
+    }
 }
