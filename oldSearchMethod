@@ -1,0 +1,56 @@
+$articleName = "";
+$searchPlaceholder = "Search Articles";
+if(!isset($_GET["title"])){
+    $searchTitle = $articleName;
+} else {
+    $searchTitle = $_GET["title"];
+}
+
+$books = Book::searchArticleName($searchTitle);
+
+$pageTitle = "Book not found";
+
+
+if ($_SERVER["REQUEST_METHOD"] ==="POST" && isset($_POST["searchSubmit"])) {
+
+    if (empty($_POST["article_name"])) {
+        $searchPlaceholder = "Enter Keyword or Name"; 
+    } else {
+        $articleName = test_input($_POST["article_name"]); 
+    }
+
+
+
+    if(isset($_POST["sortType"])){
+        // Book::searchArticleNameAsc($searchTitle);
+        switch ($_POST["sortType"]) {
+            case "Relevancy":
+              echo "Relevancy sort";
+              break;
+            case "Oldest First":
+              echo "Oldest First";
+              break;
+            case "Alphabetical (A-Z)":
+            //   echo "Ascending";
+              Book::searchArticleNameAsc($searchTitle);
+              break;
+            case "Alphabetical (Z-A)":
+            //   echo "Descending";
+              Book::searchArticleNameDesc($searchTitle);
+              break;
+            default:
+              echo "How did you even get this sort option?";
+          }
+    }
+
+
+
+}
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}

@@ -74,6 +74,21 @@ class Components {
         }
     }
 
+    public static function singleBookCard($book){
+        if(!empty($book)){
+            $bookId = Utils::escape($book["book_id"]);
+            $title = Utils::escape($book["title"]);
+            $author = Utils::escape($book["author"]);
+            $price = Utils::escape($book["price"]);
+            $filename = Utils::escape($book["filename"]);
+            require("components/book-card.php");
+
+        }
+        else{
+            require("components/no-books-found.php");
+        }
+    }
+
     public static function basketTable($booksArray){
         $userId = $_SESSION["user_id"];
 

@@ -42,7 +42,13 @@ class SQL {
       ON orders.book_id = books.book_id
       WHERE orders.user_id = ? AND orders.order_id = ?";
 
-   public static $getArticleSearchResult = "SELECT * FROM mindful.books WHERE title LIKE ?";
+    public static $getArticleSearchResult = "SELECT * FROM mindful.books WHERE title LIKE ?";
+
+
+   public static $searchArticleAsc = "SELECT * FROM mindful.books WHERE title LIKE ? ORDER BY title ASC";
+
+   public static $searchArticleDesc = "SELECT * FROM mindful.books WHERE title LIKE ? ORDER BY title DESC";
+
 
 
 }
