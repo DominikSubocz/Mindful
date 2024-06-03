@@ -34,6 +34,13 @@ body, button, input, textarea, select {
   text-decoration: none;
 }
 
+.button-blank{
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 8px 16px;
+
+}
+
 .button-gold{
   background-color: #E4BA4Fff;
   color: white;
@@ -426,6 +433,8 @@ input:not(input.button) {
 }
 
 .dropbtn {
+  display: flex;
+  align-items: center;
   background-color: #3498DB;
   color: white;
   padding: 16px;
@@ -459,7 +468,10 @@ input:not(input.button) {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 }
 
 
@@ -1830,6 +1842,18 @@ input:not(input.button) {
     align-items: center;
     gap:16px;
   }
+
+  .post-search-results{
+    display: flex;
+    justify-content: center;
+    max-width: 55%;
+  }
+
+  .post-search-results .book-list{
+    flex-wrap: wrap;
+  }
+
+
 
 
   

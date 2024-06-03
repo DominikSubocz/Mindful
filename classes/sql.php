@@ -42,7 +42,12 @@ class SQL {
       ON orders.book_id = books.book_id
       WHERE orders.user_id = ? AND orders.order_id = ?";
 
-    public static $getArticleSearchResult = "SELECT * FROM mindful.books WHERE title LIKE ?";
+    public static $getArticleSearchResult = "SELECT *, 
+    (CASE WHEN title LIKE ? THEN 1 ELSE 0 END +
+     CASE WHEN title LIKE ? THEN 1 ELSE 0 END) AS relevance
+FROM mindful.books 
+WHERE title LIKE ? 
+ORDER BY relevance DESC";
 
 
    public static $searchArticleAsc = "SELECT * FROM mindful.books WHERE title LIKE ? ORDER BY title ASC";

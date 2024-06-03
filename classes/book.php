@@ -169,9 +169,38 @@ class Book{
         $conn = Connection::connect();
 
         $stmt = $conn->prepare(SQL::$getArticleSearchResult);
-        $stmt->execute(['%'.$title.'%']);
+        $searchTermWildcard = '%' . $title . '%';
+        $stmt->execute([$searchTermWildcard, $searchTermWildcard, $searchTermWildcard]);
         $articles = $stmt->fetchAll();
         
+        $conn = null;
+
+        return $articles;
+    }
+
+    public static function searchArticleNameAsc($title){
+        $conn = Connection::connect();
+
+
+        $stmt = $conn->prepare(SQL::$searchArticleAsc);
+        $searchTermWildcard = '%' . $title . '%';
+        $stmt->execute([$searchTermWildcard]);
+        $articles = $stmt->fetchAll();
+
+        $conn = null;
+
+        return $articles;
+    }
+
+    public static function searchArticleNameDesc($title){
+        $conn = Connection::connect();
+
+
+        $stmt = $conn->prepare(SQL::$searchArticleDesc);
+        $searchTermWildcard = '%' . $title . '%';
+        $stmt->execute([$searchTermWildcard]);
+        $articles = $stmt->fetchAll();
+
         $conn = null;
 
         return $articles;

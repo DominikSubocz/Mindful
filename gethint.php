@@ -2,6 +2,7 @@
 require("classes/book.php");
 require("classes/components.php");
 
+
 $books = Book::getAllBooks();
 
 $a[] = "";
@@ -13,27 +14,40 @@ foreach($books as $book => $v) {
 
 // get the q parameter from URL
 $q = $_REQUEST["q"];
+$sort = $_REQUEST["sort"];
 
 $hint = "";
 
 // lookup all hints from array if $q is different from ""
+
+
+
 if ($q !== "") {
   $q = strtolower($q);
   $len=strlen($q);
-  foreach($a as $name) {
-    if (stristr($q, substr($name, 0, $len))) {
-      if ($hint === "") {
-        $hint = $name;
+  if ($sort !== ""){
 
-    } else {
-        $hint .= ", $name";
-        $results = Book::searchArticleName($name);
+    switch ($sort){
+      case 'Relevancy':
+        $results = Book::searchArticleName($q);
         Components::allBooks($results);
-      }
+        break;
+      case 'Alphabetic (A-Z)':
+        $results = Book::searchArticleNameAsc($q);
+        Components::allBooks($results);
+        break;
+      case 'Alphabetic (Z-A)':
+        $results = Book::searchArticleNameDesc($q);
+        Components::allBooks($results);
+        break;
+      default:
+        var_dump("How did you even manage to get this?");
+        break;
     }
+  
   }
+
 }
 
-// Output "no suggestion" if no hint was found or output correct values
-echo $hint === "" ? "no suggestion" : $hint;
+
 ?>
