@@ -467,11 +467,26 @@ input:not(input.button) {
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
+.show-dropdown {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+}
+
+.show {
+  display: block;
+}
+
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
 }
 
 

@@ -19,6 +19,7 @@ class Components {
                 $author = Utils::escape($book["author"]);
                 $price = Utils::escape($book["price"]);
                 $filename = Utils::escape($book["filename"]);
+                $tags = Utils::escape($book["tags"]);
 
                 require("components/book-card.php");
             }
@@ -47,6 +48,8 @@ class Components {
                 $author = Utils::escape($book["author"]);
                 $price = Utils::escape($book["price"]);
                 $filename = Utils::escape($book["filename"]);
+                $tags = Utils::escape($book["tags"]);
+
         
                 require("components/book-card.php");
                 

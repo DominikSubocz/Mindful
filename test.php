@@ -9,6 +9,7 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
 <script>
   sortType = "Relevancy";
 
+
   /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
   function myFunction() {
@@ -66,6 +67,7 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
     <button onclick="pickSort('Alphabetic (Z-A)')" class="button-blank">Alphabetical (Z-A')</button>
   </div>
 </div>
+
 <div class="post-search-results">
   <div id="book-list" class="book-list">
   </div>
