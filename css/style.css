@@ -15,7 +15,10 @@ html {
 
 body {
   margin: 0;
-  min-height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  
 }
 
 body, button, input, textarea, select {
@@ -66,6 +69,7 @@ input, textarea{
   background-color: #E7E7E7ff;
   border-radius: 10px;
 }
+
 
 textarea{
   max-width: 100%;
@@ -122,6 +126,8 @@ input.button {
   display: flex;
   padding:42px 5vw;
   align-items: flex-start;
+  
+  
 }
 
 .footer-top h2{
@@ -162,12 +168,23 @@ input.button {
 
 .main-content {
   padding: 16px;
+  flex: 1;
 }
 
 .mobile-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.mobile-top h3{
+  margin-left: 25px;
+}
+
+.sidebar-navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap:16px;
 }
 
 .nav-button {
@@ -312,7 +329,7 @@ th, td {
 /* LOGIN / REGISTER FORMS */
 input:not(input.button) {
   margin-bottom: 16px;
-  padding: 8px;
+  padding: 14px;
   width: 100%;
 }
 
@@ -487,6 +504,11 @@ input:not(input.button) {
   text-align: center;
   margin: 2px;
   display: none;
+}
+
+.mobile-top hr{
+  background-color: #000;
+  border: none;
 }
 
 
@@ -677,6 +699,55 @@ input:not(input.button) {
     text-align: center;
   }
 
+  .sidebar{
+    order: 2;
+  }
+
+  .admin-header{
+    padding: 0;
+  }
+
+  .admin-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sidebar-mobile{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-header .mobile-top{
+    display: flex;
+  }
+
+  .admin-header .mobile-top h3{
+    margin-left: 0;
+  }
+
+  .mobile-top hr{
+    width: 100%;
+    height: 3px;
+    margin:0 auto 0 0;
+  }
+
+  .admin-header .mobile-top h3, .admin-header .mobile-top h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .header-searchbar{
+    order: 1;
+  }
+
+  .sidebar-mobile{
+    background-color: #E7E7E7ff;
+    padding:16px;
+  }
+  
+
+  
   
 }
 
@@ -1577,6 +1648,10 @@ input:not(input.button) {
   .authentication-container{
     width: 35vw;
     margin-left:20px;
+  }
+
+  .login-page-container{
+    margin:90px auto 30px auto;
   }
 
   .contact-submit-button{

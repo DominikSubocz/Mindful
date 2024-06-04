@@ -53,7 +53,7 @@
                   if(isset($_SESSION["loggedIn"])) {
                     $user = $_SESSION["username"];
                     if($_SESSION["user_role"] === "Admin") {
-                      echo "<li><a href='add-book.php'>Add Book</a></li>";
+                      echo "<li><a href='admin-dashboard.php'>Admin Dashboard</a></li>";
                     }
                     echo "<li><a href='logout.php'>Logout</a></li>";
                   }

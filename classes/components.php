@@ -6,6 +6,11 @@ class Components {
 
     }
 
+    public static function adminHeader($pageTitle, $stylesheets, $scripts){
+        require("components/admin-header.php");
+
+    }
+
     public static function pageFooter(){
         require("components/footer.php");
     }
@@ -155,5 +160,10 @@ class Components {
         } else {
             require("components/no-orders-found.php");
         }
+    }
+
+    public static function singleLink($page){
+
+        require("components/link-single.php");
     }
 }
