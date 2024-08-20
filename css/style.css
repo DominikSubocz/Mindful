@@ -478,6 +478,20 @@ input:not(input.button) {
   z-index: 1;
 }
 
+.tag-content{
+  flex-direction: column;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 160px;
+  
+}
+
+.tags-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
@@ -1936,12 +1950,14 @@ input:not(input.button) {
   .post-search-results{
     display: flex;
     justify-content: center;
-    max-width: 55%;
+    max-width: 75%;
   }
 
   .post-search-results .book-list{
     flex-wrap: wrap;
+    margin-left: 250px;
   }
+  
 
 
 

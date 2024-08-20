@@ -62,6 +62,55 @@ CREATE TABLE mindful.orders (
   FOREIGN KEY (postcode) REFERENCES postcodes(postcode)
 );
 
+CREATE TABLE mindful.tags(
+  tag_id INT NOT NULL AUTO_INCREMENT,
+  tag_name VARCHAR(200) NOT NULL,
+  PRIMARY KEY(tag_id)
+);
+
+INSERT INTO mindful.tags (tag_name) VALUES
+()
+
 UPDATE mindful.users
 SET user_role = 'Admin'
 WHERE user_id = 1;
+
+fairy tales, folklore, children's literature
+	
+
+(classic),
+(tragedy),
+(philosophy),
+(novel),
+(coming-of-age),
+(satire),
+(adventure),
+(travel),
+(drama),
+(tragedy),
+(classic),
+(historical fiction),
+(war),
+(Italy),
+(psychological),
+(modernist),
+(Icelandic),
+(rural),
+(African American),
+(social issues),
+(poetry),
+(American),
+(transcendentalism),
+(romance),
+(magical realism),
+(Latin American),
+(Greek),
+(historical fiction),
+(biography),
+(Roman Empire),
+(Victorian),
+(Indian),
+(sea),
+(stream of consciousness),
+(dystopian),
+(political)

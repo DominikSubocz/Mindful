@@ -54,6 +54,6 @@ ORDER BY relevance DESC";
 
    public static $searchArticleDesc = "SELECT * FROM mindful.books WHERE title LIKE ? ORDER BY title DESC";
 
-
+   public static $getAllTags = "SELECT * FROM mindful.tags";
 
 }

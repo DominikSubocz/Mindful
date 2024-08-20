@@ -1,5 +1,6 @@
 <?php
 require("classes/components.php");
+require("classes/tags.php");
 Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
 
 ?>
@@ -12,15 +13,11 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
 
   /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
-  function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+  function myFunction(dropdown) {
+    document.getElementById(dropdown).classList.toggle("show");
   }
 
-  function pickSort(type){
-    sortType = type;
-    document.getElementById("dropBtnTxt").innerText = "Sort By: " + type; ;
 
-  }
 
   // Close the dropdown menu if the user clicks outside of it
   window.onclick = function(event) {
@@ -60,11 +57,28 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
   <input type="text" id="title" name="title" onkeyup="showHint(this.value)">
 </form> 
 <div class="dropdown">
-  <button id="dropbtn" onclick="myFunction()" class="dropbtn">Sort By: <p id="dropBtnTxt">Relevancy</p> <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+  <button id="dropbtn" onclick="myFunction('myDropdown')" class="dropbtn">Sort By: <p id="dropBtnTxt">Relevancy</p> <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
   <div id="myDropdown" class="dropdown-content">
     <button onclick="pickSort('Relevancy')" class="button-blank">Relevancy</button>
     <button onclick="pickSort('Alphabetic (A-Z)')" class="button-blank">Alphabetical (A-Z)</button>
     <button onclick="pickSort('Alphabetic (Z-A)')" class="button-blank">Alphabetical (Z-A')</button>
+  </div>
+  
+  <button id="dropbtn" onclick="myFunction('tagsDropdown')" class="dropbtn">Tags <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+  <div id="tagsDropdown" class="tag-content">
+    
+    <?php
+
+      $tags = Tags::getAllTags();
+      ?> 
+      <div class="tags-container">
+        <?php
+        Components::allTags($tags);
+        ?>
+      </div>
+
+    ?>
+    
   </div>
 </div>
 
@@ -72,6 +86,20 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
   <div id="book-list" class="book-list">
   </div>
 </div>
+
+<script>
+
+let searchBox = document.getElementById("title");
+
+function pickSort(type){
+    sortType = type;
+    document.getElementById("dropBtnTxt").innerText = "Sort By: " + type; ;
+    showHint(searchBox.value);
+
+  }
+
+</script>
+
 
 <?php
 

@@ -166,4 +166,19 @@ class Components {
 
         require("components/link-single.php");
     }
+
+    public static function allTags($tags){
+        if(!empty($tags)){
+            foreach($tags as $tag){
+                $tagID = Utils::escape($tag["tag_id"]);
+                $tagName = Utils::escape($tag["tag_name"]);
+            
+                require("components/tag-row.php");
+            }
+            
+
+        } else {
+            require("components/no-orders-found.php");
+        }
+    }
 }
