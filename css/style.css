@@ -457,6 +457,8 @@ input:not(input.button) {
   padding: 16px;
   border: none;
   cursor: pointer;
+  margin:10px 0;
+  width: 100%;
 }
 
 /* Dropdown button on hover & focus */
@@ -1958,7 +1960,14 @@ input:not(input.button) {
     margin-left: 250px;
   }
   
+.search-container{
+  display: flex;
+  padding-left:50px;
+}
 
+.search-options-container{
+  width: 100%;
+}
 
 
 

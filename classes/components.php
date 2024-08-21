@@ -171,7 +171,8 @@ class Components {
         if(!empty($tags)){
             foreach($tags as $tag){
                 $tagID = Utils::escape($tag["tag_id"]);
-                $tagName = Utils::escape($tag["tag_name"]);
+                $tagName =  Utils::escape($tag["tag_name"]);
+                $tagButtonName = str_replace(" ", "", Utils::escape($tag["tag_name"]));
             
                 require("components/tag-row.php");
             }

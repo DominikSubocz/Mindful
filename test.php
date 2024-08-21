@@ -9,6 +9,7 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
 
 <script>
   sortType = "Relevancy";
+  tags = [];
 
 
   /* When the user clicks on the button,
@@ -45,45 +46,49 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
           document.getElementById("book-list").innerHTML = this.responseText;
         }
       }
-      xmlhttp.open("GET", "gethint.php?q="+str+"&sort="+sortType, true);
+      xmlhttp.open("GET", "gethint.php?q="+str+"&sort="+sortType+"&tags="+tags, true);
       xmlhttp.send();
     }
   }
 </script>
 
 
-<form action="">
-  <label for="title">Title:</label>
-  <input type="text" id="title" name="title" onkeyup="showHint(this.value)">
-</form> 
-<div class="dropdown">
-  <button id="dropbtn" onclick="myFunction('myDropdown')" class="dropbtn">Sort By: <p id="dropBtnTxt">Relevancy</p> <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-  <div id="myDropdown" class="dropdown-content">
-    <button onclick="pickSort('Relevancy')" class="button-blank">Relevancy</button>
-    <button onclick="pickSort('Alphabetic (A-Z)')" class="button-blank">Alphabetical (A-Z)</button>
-    <button onclick="pickSort('Alphabetic (Z-A)')" class="button-blank">Alphabetical (Z-A')</button>
+<div class="search-container">
+  <div class="search-options-container">
+    <form action="">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" onkeyup="showHint(this.value)">
+    </form>
+    <div class="dropdown">
+      <button id="dropbtn" onclick="myFunction('myDropdown')" class="dropbtn">Sort By: <p id="dropBtnTxt">Relevancy</p> <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+      <div id="myDropdown" class="dropdown-content">
+        <button onclick="pickSort('Relevancy')" class="button-blank">Relevancy</button>
+        <button onclick="pickSort('Alphabetic (A-Z)')" class="button-blank">Alphabetical (A-Z)</button>
+        <button onclick="pickSort('Alphabetic (Z-A)')" class="button-blank">Alphabetical (Z-A')</button>
+      </div>
+    
+      <button id="dropbtn" onclick="myFunction('tagsDropdown')" class="dropbtn">Tags <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+      <div id="tagsDropdown" class="tag-content">
+    
+        <?php
+    
+          $tags = Tags::getAllTags();
+          ?>
+          <div class="tags-container">
+            <?php
+            Components::allTags($tags);
+            ?>
+          </div>
+    
+        
+    
+      </div>
+    </div>
   </div>
   
-  <button id="dropbtn" onclick="myFunction('tagsDropdown')" class="dropbtn">Tags <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-  <div id="tagsDropdown" class="tag-content">
-    
-    <?php
-
-      $tags = Tags::getAllTags();
-      ?> 
-      <div class="tags-container">
-        <?php
-        Components::allTags($tags);
-        ?>
-      </div>
-
-    ?>
-    
-  </div>
-</div>
-
-<div class="post-search-results">
-  <div id="book-list" class="book-list">
+  <div class="post-search-results">
+    <div id="book-list" class="book-list">
+    </div>
   </div>
 </div>
 
@@ -97,6 +102,22 @@ function pickSort(type){
     showHint(searchBox.value);
 
   }
+
+function tickTag(){
+  const checkboxes = document.querySelectorAll("#myCheck");
+  
+  for(let i = 0; i < checkboxes.length; i++){
+    if(checkboxes[i].checked == true){
+      tags.push(checkboxes[i].name);
+    } else {
+    }
+  }
+  tags = tags.filter((item, index) => tags.indexOf(item) === index);
+  console.log(tags);
+
+}
+
+
 
 </script>
 

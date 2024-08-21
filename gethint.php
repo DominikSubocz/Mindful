@@ -15,6 +15,7 @@ foreach($books as $book => $v) {
 // get the q parameter from URL
 $q = $_REQUEST["q"];
 $sort = $_REQUEST["sort"];
+$tags = $_REQUEST["tags"];
 
 $hint = "";
 
