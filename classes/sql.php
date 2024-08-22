@@ -52,8 +52,9 @@ ORDER BY relevance DESC";
 
    public static $searchArticleAsc = "SELECT * FROM mindful.books WHERE title LIKE ? ORDER BY title ASC";
 
-   public static $searchArticleDesc = "SELECT * FROM mindful.books WHERE title LIKE ? ORDER BY title DESC";
 
    public static $getAllTags = "SELECT * FROM mindful.tags";
+
+//    SELECT * FROM mindful.books WHERE title LIKE "%a%" AND tags LIKE "%classic%" ORDER BY title ASC;
 
 }

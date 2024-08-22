@@ -90,7 +90,7 @@ INSERT INTO mindful.tags (tag_name) VALUES
 ("modernist"),
 ("Icelandic"),
 ("rural"),
-("African American"),
+("african american"),
 ("social issues"),
 ("poetry"),
 ("American"),

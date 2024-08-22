@@ -165,12 +165,56 @@ class Book{
         }
     }
 
-    public static function searchArticleName($title){
+    public static function searchArticleName($title, $sortType, $tags ){
         $conn = Connection::connect();
-
-        $stmt = $conn->prepare(SQL::$getArticleSearchResult);
         $searchTermWildcard = '%' . $title . '%';
-        $stmt->execute([$searchTermWildcard, $searchTermWildcard, $searchTermWildcard]);
+        $cmd = "SELECT * ";
+
+        if($sortType == 'Relevancy' ){
+            $cmd .= ", 
+            (CASE WHEN title LIKE ? THEN 1 ELSE 0 END +
+             CASE WHEN title LIKE ? THEN 1 ELSE 0 END) AS relevance
+        FROM mindful.books 
+        WHERE title LIKE ? ";
+
+            if(!empty($tags)){
+                $cmd .= "AND tags REGEXP ?";
+                $stmt = $conn->prepare($cmd);
+                $stmt->execute([$searchTermWildcard, $searchTermWildcard, $searchTermWildcard, $tags]);
+            } else {
+                $cmd .= "ORDER BY relevance DESC";
+                $stmt = $conn->prepare($cmd);
+                $stmt->execute([$searchTermWildcard, $searchTermWildcard, $searchTermWildcard]);
+            }
+
+        
+        } else if ($sortType == 'Alphabetic (A-Z)') {
+
+            $cmd = "SELECT * FROM mindful.books WHERE title LIKE ? ";
+            if(!empty($tags)){
+                $cmd .= "AND tags LIKE ? ORDER BY title ASC ";
+                $stmt = $conn->prepare($cmd);
+                $stmt->execute([$searchTermWildcard, $tags]);
+            } else {
+                 $cmd .= "ORDER BY title ASC";
+                 $stmt = $conn->prepare($cmd);
+                 $stmt->execute([$searchTermWildcard]);
+            }
+            
+        } else {
+            $cmd = "SELECT * FROM mindful.books WHERE title LIKE ? ";
+            if(!empty($tags)){
+                $cmd .= "AND tags LIKE ? ORDER BY title DESC ";
+                $stmt = $conn->prepare($cmd);
+                $stmt->execute([$searchTermWildcard, $tags]);
+            } else {
+                 $cmd .= "ORDER BY title DESC";
+                 $stmt = $conn->prepare($cmd);
+                 $stmt->execute([$searchTermWildcard]);
+            }
+        }
+
+
         $articles = $stmt->fetchAll();
         
         $conn = null;
@@ -181,8 +225,6 @@ class Book{
     public static function searchArticleNameAsc($title){
         $conn = Connection::connect();
 
-
-        $stmt = $conn->prepare(SQL::$searchArticleAsc);
         $searchTermWildcard = '%' . $title . '%';
         $stmt->execute([$searchTermWildcard]);
         $articles = $stmt->fetchAll();
@@ -196,9 +238,8 @@ class Book{
         $conn = Connection::connect();
 
 
-        $stmt = $conn->prepare(SQL::$searchArticleDesc);
-        $searchTermWildcard = '%' . $title . '%';
-        $stmt->execute([$searchTermWildcard]);
+        $stmt = $conn->prepare("SELECT * FROM mindful.books WHERE title LIKE ? ORDER BY title DESC");
+
         $articles = $stmt->fetchAll();
 
         $conn = null;

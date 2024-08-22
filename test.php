@@ -105,20 +105,22 @@ function pickSort(type){
 
 function tickTag(){
   const checkboxes = document.querySelectorAll("#myCheck");
+
+  let selected = [];
   
   for(let i = 0; i < checkboxes.length; i++){
     if(checkboxes[i].checked == true){
-      tags.push(checkboxes[i].name);
-    }
-    
-    if(checkboxes[i].checked == false) {
-        if (tags[i] == checkboxes[i].name){
-          tags.splice(i, 1);
-          console.log(i);
-        }
+      selected.push(checkboxes[i].name);
     }
   }
-  tags = tags.filter((item, index) => tags.indexOf(item) === index);
+
+
+  selected = selected.filter((item, index) => selected.indexOf(item) === index);
+  tags = selected;
+
+  showHint(searchBox.value);
+
+
   console.log(tags);
 
 }
