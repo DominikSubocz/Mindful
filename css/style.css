@@ -1969,6 +1969,24 @@ input:not(input.button) {
   width: 100%;
 }
 
+.tagBox, .tags-container .button-blank{
+  display: inline;
+}
+
+.tagBox {
+  width: 50px !important;
+  float: right;
+  font-family: inherit;
+}
+
+
+.tagContainer{
+  margin:5px;
+  padding: 15px 0;
+  background-color: rgb(226, 226, 226);
+  border-radius: 10px;
+  width: 100%;
+}
 
 
   

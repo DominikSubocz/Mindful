@@ -1,0 +1,62 @@
+Index.php - 
+
+Unused CSS:
+.button-blank{
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 8px 16px;
+
+}
+
+.button-gold{
+  background-color: #E4BA4Fff;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  padding: 14px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button-outline{
+  color: black;
+  display: inline-block;
+  font-weight: bold;
+  padding: 14px 24px;
+  border: 1px solid black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+textarea{
+  max-width: 100%;
+  min-width: 100%;
+}
+
+iframe{
+  width: 100%;
+}
+
+.button:hover {
+  background-color: orangered;
+  color: white;
+}
+
+.danger {
+  background-color: #c11537;
+  color: white;
+}
+
+.danger:hover {
+  background-color: #920925;
+  color: white;
+}
+
+.button-form {
+  margin-bottom: 16px;
+}
+
+.button-form .button {
+  text-align: center;
+  width: 100%;
+}
