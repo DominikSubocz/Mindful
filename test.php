@@ -54,12 +54,11 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
 
 
 <div class="search-container">
-  <div class="search-options-container">
-    <form action="">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" onkeyup="showHint(this.value)">
-    </form>
-    <div class="dropdown">
+
+
+
+
+  <div class="dropdown">
       <button id="dropbtn" onclick="myFunction('myDropdown')" class="dropbtn">Sort By: <p id="dropBtnTxt">Relevancy</p> <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
       <div id="myDropdown" class="dropdown-content">
         <button onclick="pickSort('Relevancy')" class="button-blank">Relevancy</button>
@@ -83,14 +82,27 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
         
     
       </div>
-    </div>
   </div>
-  
-  <div class="post-search-results">
-    <div id="book-list" class="book-list">
+
+  <div class="search-container-top">
+    <div class="searchBar">
+      <form action="">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" onkeyup="showHint(this.value)">
+      </form>
     </div>
-  </div>
+    <div class="post-search-results">
+      <div id="book-list" class="book-list">
+    </div>
+  </div>  
 </div>
+
+
+
+
+
+</div>
+  
 
 <script>
 

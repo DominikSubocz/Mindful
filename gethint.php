@@ -28,7 +28,6 @@ foreach($tagsArray as $tag){
 }
 array_pop($tempArray);
 $searchTags = implode('', $tempArray);
-echo($searchTags);
 
 
 

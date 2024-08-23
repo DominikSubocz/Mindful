@@ -18,7 +18,6 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  
 }
 
 body, button, input, textarea, select {
@@ -761,6 +760,30 @@ input:not(input.button) {
     background-color: #E7E7E7ff;
     padding:16px;
   }
+
+  .search-container{
+    display: flex;
+  }
+
+  .tagContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .tagBox{
+    margin-bottom: 0 !important;
+  }
+
+  .post-search-results .book-list{
+    flex-direction: column;
+  }
+
+  .search-container-top{
+    width: 90%;
+    margin-left:25px;
+  }
   
 
   
@@ -950,6 +973,32 @@ input:not(input.button) {
     font-size: 22px;
     margin:0 10px 0 10px;
   }
+
+  .search-container{
+    display: flex;
+  }
+
+  .tagContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .tagBox{
+    margin-bottom: 0 !important;
+  }
+
+  .post-search-results .book-list{
+    flex-direction: column;
+  }
+
+  .search-container-top{
+    width: 90%;
+    margin-left:25px;
+  }
+
+
 
 }
 /* MOBILE AND TABLET */
@@ -1319,6 +1368,30 @@ input:not(input.button) {
   .event-card-icons i {
     font-size: 22px;
     margin:0 10px 0 10px;
+  }
+
+  .search-container{
+    display: flex;
+  }
+
+  .tagContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .tagBox{
+    margin-bottom: 0 !important;
+  }
+
+  .post-search-results .book-list{
+    flex-direction: column;
+  }
+
+  .search-container-top{
+    width: 90%;
+    margin-left:25px;
   }
 
 
@@ -1952,12 +2025,11 @@ input:not(input.button) {
   .post-search-results{
     display: flex;
     justify-content: center;
-    max-width: 75%;
+    max-width: 100%;
   }
 
   .post-search-results .book-list{
     flex-wrap: wrap;
-    margin-left: 250px;
   }
   
 .search-container{
@@ -1974,18 +2046,31 @@ input:not(input.button) {
 }
 
 .tagBox {
-  width: 50px !important;
-  float: right;
-  font-family: inherit;
+  width: 25px !important;
+  height: 25px;
+  margin: 0 25px 0 10px !important;
+  -webkit-appearance: none;
+  border:#000 solid 1px;
 }
 
+.tagBox:checked {
+  background-color: #E4BA4Fff;
+}
 
 .tagContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin:5px;
   padding: 15px 0;
   background-color: rgb(226, 226, 226);
   border-radius: 10px;
-  width: 100%;
+  width: 95%;
+}
+
+.search-container-top{
+  width: calc(550px + 100vw - 950px);
+  margin-left:25px;
 }
 
 
