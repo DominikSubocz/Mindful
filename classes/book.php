@@ -168,51 +168,39 @@ class Book{
     public static function searchArticleName($title, $sortType, $tags ){
         $conn = Connection::connect();
         $searchTermWildcard = '%' . $title . '%';
-        $cmd = "SELECT * ";
-
-        if($sortType == 'Relevancy' ){
-            $cmd .= ", 
-            (CASE WHEN title LIKE ? THEN 1 ELSE 0 END +
+       
+        $cmd = "SELECT *, (CASE WHEN title LIKE ? THEN 1 ELSE 0 END +
              CASE WHEN title LIKE ? THEN 1 ELSE 0 END) AS relevance
         FROM mindful.books 
-        WHERE title LIKE ? ";
+        WHERE title LIKE ?";
 
-            if(!empty($tags)){
-                $cmd .= "AND tags REGEXP ?";
-                $stmt = $conn->prepare($cmd);
-                $stmt->execute([$searchTermWildcard, $searchTermWildcard, $searchTermWildcard, $tags]);
-            } else {
-                $cmd .= "ORDER BY relevance DESC";
-                $stmt = $conn->prepare($cmd);
-                $stmt->execute([$searchTermWildcard, $searchTermWildcard, $searchTermWildcard]);
-            }
 
-        
-        } else if ($sortType == 'Alphabetic (A-Z)') {
+        $array = (explode("|",$tags));
 
-            $cmd = "SELECT * FROM mindful.books WHERE title LIKE ? ";
-            if(!empty($tags)){
-                $cmd .= "AND tags LIKE ? ORDER BY title ASC ";
-                $stmt = $conn->prepare($cmd);
-                $stmt->execute([$searchTermWildcard, $tags]);
-            } else {
-                 $cmd .= "ORDER BY title ASC";
-                 $stmt = $conn->prepare($cmd);
-                 $stmt->execute([$searchTermWildcard]);
-            }
-            
-        } else {
-            $cmd = "SELECT * FROM mindful.books WHERE title LIKE ? ";
-            if(!empty($tags)){
-                $cmd .= "AND tags LIKE ? ORDER BY title DESC ";
-                $stmt = $conn->prepare($cmd);
-                $stmt->execute([$searchTermWildcard, $tags]);
-            } else {
-                 $cmd .= "ORDER BY title DESC";
-                 $stmt = $conn->prepare($cmd);
-                 $stmt->execute([$searchTermWildcard]);
+        $params = [];
+
+        for($j = 0; $j < 3; $j++){
+            $params[] = $searchTermWildcard;
+        }
+
+        if(!empty($tags)){
+            foreach($array as $tag){
+                $cmd .= "AND tags LIKE ?";
+                $params[] = '%' . $tag . '%';
             }
         }
+
+        $cmd .= " ORDER BY relevance DESC";
+        $stmt = $conn->prepare($cmd);
+
+
+        // var_dump($params);
+        // var_dump(count($params));
+        // var_dump(substr_count($cmd,"?"));
+        $stmt->execute($params);
+
+        // var_dump($cmd);
+
 
 
         $articles = $stmt->fetchAll();

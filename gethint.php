@@ -24,7 +24,7 @@ if(!empty($tags)){
 }
 foreach($tagsArray as $tag){
   array_push($tempArray, $tag);
-  array_push($tempArray, ".*|");
+  array_push($tempArray, "|");
 }
 array_pop($tempArray);
 $searchTags = implode('', $tempArray);
