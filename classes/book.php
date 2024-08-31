@@ -168,38 +168,70 @@ class Book{
     public static function searchArticleName($title, $sortType, $tags ){
         $conn = Connection::connect();
         $searchTermWildcard = '%' . $title . '%';
+        $params = [];
        
-        $cmd = "SELECT *, (CASE WHEN title LIKE ? THEN 1 ELSE 0 END +
+        $cmd = "SELECT *";
+
+        if($sortType == 'Relevancy'){
+            $cmd .= ", 
+            (CASE WHEN title LIKE ? THEN 1 ELSE 0 END +
              CASE WHEN title LIKE ? THEN 1 ELSE 0 END) AS relevance
         FROM mindful.books 
         WHERE title LIKE ?";
+        
+            for($j = 0; $j < 3; $j++){
+                $params[] = $searchTermWildcard;
+            }
+
+            if(empty($tags)){
+                $cmd .= " ORDER BY relevance DESC";
+            }
+
+        } else if ($sortType == 'Alphabetic (A-Z)'){
+            $cmd .= " FROM mindful.books WHERE title LIKE ?";
+            $params[] = $searchTermWildcard;
+            if(empty($tags)){
+                $cmd .= " ORDER BY title ASC";
+            }
+
+        } else {
+            $cmd .= " FROM mindful.books WHERE title LIKE ?";
+            $params[] = $searchTermWildcard;
+            if(empty($tags)){
+                $cmd .= " ORDER BY title DESC";
+            }
+        }
 
 
         $array = (explode("|",$tags));
 
-        $params = [];
 
-        for($j = 0; $j < 3; $j++){
-            $params[] = $searchTermWildcard;
-        }
+ 
 
         if(!empty($tags)){
             foreach($array as $tag){
-                $cmd .= "AND tags LIKE ?";
+                $cmd .= " AND tags LIKE ?";
                 $params[] = '%' . $tag . '%';
+            }
+
+            if($sortType == 'Relevancy'){
+                $cmd .= " ORDER BY relevance DESC";
+            } else if ($sortType == 'Alphabetic (A-Z)'){
+                $cmd .= " ORDER BY title ASC";
+            } else {
+                $cmd .= "ORDER BY title DESC";
             }
         }
 
-        $cmd .= " ORDER BY relevance DESC";
         $stmt = $conn->prepare($cmd);
 
 
-        // var_dump($params);
         // var_dump(count($params));
         // var_dump(substr_count($cmd,"?"));
         $stmt->execute($params);
 
         // var_dump($cmd);
+        // print_r($params);
 
 
 

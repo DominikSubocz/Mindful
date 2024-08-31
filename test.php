@@ -14,8 +14,13 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
 
   /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
-  function myFunction(dropdown) {
+  function myFunction(dropdown, button) {
+    var abc = document.getElementById(button).getElementsByTagName("i")[0];
+    abc.classList.toggle("fa-chevron-down");
+    abc.classList.toggle("fa-chevron-up");
+
     document.getElementById(dropdown).classList.toggle("show");
+    console.log(abc);
   }
 
 
@@ -59,15 +64,15 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
 
 
   <div class="dropdown">
-      <button id="dropbtn" onclick="myFunction('myDropdown')" class="dropbtn">Sort By: <p id="dropBtnTxt">Relevancy</p> <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+      <button id="dropbtn" onclick="myFunction('myDropdown','dropbtn')" class="dropbtn">Sort By: <p id="dropBtnTxt">Relevancy</p> <i class="fa fa-chevron fa-chevron-down" aria-hidden="true"></i></button>
       <div id="myDropdown" class="dropdown-content">
         <button onclick="pickSort('Relevancy')" class="button-blank">Relevancy</button>
         <button onclick="pickSort('Alphabetic (A-Z)')" class="button-blank">Alphabetical (A-Z)</button>
         <button onclick="pickSort('Alphabetic (Z-A)')" class="button-blank">Alphabetical (Z-A')</button>
       </div>
     
-      <button id="dropbtn" onclick="myFunction('tagsDropdown')" class="dropbtn">Tags <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-      <div id="tagsDropdown" class="tag-content">
+      <button id="tagsDropBtn" onclick="myFunction('tagsDropdown', 'tagsDropBtn')" class="dropbtn">Tags <i class="fa fa-chevron fa-chevron-down" aria-hidden="true"></i></button>
+      <div id="tagsDropdown" class="tag-content show">
     
         <?php
     

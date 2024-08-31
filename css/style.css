@@ -17,6 +17,7 @@ body {
   margin: 0;
   display: flex;
   min-height: 100vh;
+  min-width: 320px;
   flex-direction: column;
 }
 
@@ -468,6 +469,11 @@ input:not(input.button) {
 .dropdown {
   position: relative;
   display: inline-block;
+  width:295.1px;
+}
+
+.dropbtn .fa-chevron{
+  margin-left:auto;
 }
 
 .dropdown-content {
@@ -484,6 +490,7 @@ input:not(input.button) {
   background-color: #f1f1f1;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   min-width: 160px;
+  display: none;
   
 }
 
@@ -491,6 +498,8 @@ input:not(input.button) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-height: 300px;
+  overflow-y: scroll;
 }
 
 /* Change color of dropdown links on hover */
@@ -524,6 +533,19 @@ input:not(input.button) {
 .mobile-top hr{
   background-color: #000;
   border: none;
+}
+
+.tagBox {
+  width: 25px !important;
+  height: 25px;
+  margin: 0 25px 0 10px !important;
+  -webkit-appearance: none;
+  border:#000 solid 1px;
+  padding: 0 !important;
+}
+
+.tagBox:checked {
+  background-color: #E4BA4Fff;
 }
 
 
@@ -763,6 +785,16 @@ input:not(input.button) {
 
   .search-container{
     display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown{
+    width: 100%;
+  }
+
+  .tags-container{
+    overflow-x: hidden;
+    margin-bottom:35px;
   }
 
   .tagContainer{
@@ -789,6 +821,8 @@ input:not(input.button) {
   
   
 }
+
+
 
 
 @media screen and (min-width: 451px) and (max-width: 726px) {
@@ -976,6 +1010,16 @@ input:not(input.button) {
 
   .search-container{
     display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown{
+    width: 100%;
+  }
+
+  .tags-container{
+    overflow-x: hidden;
+    margin-bottom:35px;
   }
 
   .tagContainer{
@@ -1000,7 +1044,9 @@ input:not(input.button) {
 
 
 
+
 }
+
 /* MOBILE AND TABLET */
 @media screen and (min-width: 726px) and (max-width: 949px) {
   /* 
@@ -1372,6 +1418,11 @@ input:not(input.button) {
 
   .search-container{
     display: flex;
+    padding:0 30px;
+  }
+
+  .tags-container{
+    overflow-x: hidden;
   }
 
   .tagContainer{
@@ -2045,17 +2096,6 @@ input:not(input.button) {
   display: inline;
 }
 
-.tagBox {
-  width: 25px !important;
-  height: 25px;
-  margin: 0 25px 0 10px !important;
-  -webkit-appearance: none;
-  border:#000 solid 1px;
-}
-
-.tagBox:checked {
-  background-color: #E4BA4Fff;
-}
 
 .tagContainer{
   display: flex;
