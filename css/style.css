@@ -71,10 +71,30 @@ input, textarea{
 }
 
 
+
 textarea{
   max-width: 100%;
   min-width: 100%;
 }
+
+.editorTextArea{
+  min-height: 200px;
+  display: flex;
+}
+
+
+.editorToolbar{
+  background-color: #E7E7E7ff;
+  border-radius: 10px;
+
+}
+
+.editorToolbar .fa{
+  font-size: 18px;
+  margin:0 10px;
+}
+
+
 
 iframe{
   width: 100%;
