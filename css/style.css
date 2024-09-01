@@ -77,9 +77,22 @@ textarea{
   min-width: 100%;
 }
 
+
+.editorTextArea, #editorText{
+  display: flex;
+
+}
+
+#editorText{
+  align-items: flex-start;
+}
+
+#editorText p {
+  margin: 0 5px 0 5px;
+}
+
 .editorTextArea{
   min-height: 200px;
-  display: flex;
 }
 
 

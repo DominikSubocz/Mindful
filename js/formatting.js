@@ -8,6 +8,9 @@ function format(type){
 
         // and give it some content
         const newContent = document.createTextNode(sel.toString());
+
+        console.log(sel.toString());
+        
       
         // add the text node to the newly created div
         newText.appendChild(newContent);
@@ -18,15 +21,24 @@ function format(type){
             case "fa fa-align-center":
                 newText.style.textAlign = "center";
               break;
+            case "fa fa-align-right":
+              newText.style.textAlign = "right";
+              break;
+            case "fa fa-bold":
+              newText.style.fontWeight = "bold";
+              break;
             default:
               // code block
           }
       
         // add the newly created element and its content into the DOM
-        const currentDiv = document.getElementById("editorTextArea");
-        currentDiv.appendChild(newText);
         var range = sel.getRangeAt(0);
         range.deleteContents(); // Deletes selected text   
+        
+        const currentDiv = document.getElementById("editorText");
+        console.log(newText);
+        currentDiv.appendChild(newText);
+
     }
  
 }
