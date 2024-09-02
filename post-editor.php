@@ -24,6 +24,8 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav", "f
         <button onclick="format(this)"><i class="fa fa-list" aria-hidden="true"></i></button>
         <button onclick="format(this)"><i class="fa fa-list-ol" aria-hidden="true"></i></button>
         <button onclick="format(this)"><i class="fa fa-quote-left" aria-hidden="true"></i></button>
+        <button onclick="format(this)"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+        <input type="file"  id="theFile" hidden> </input>
     </div>
 
     <div id="editorTextArea" class="editorTextArea" contenteditable="true">
