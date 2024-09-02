@@ -27,7 +27,7 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav", "f
     </div>
 
     <div id="editorTextArea" class="editorTextArea" contenteditable="true">
-        <p id="editorText">abc</p>
+        Enter some text
     </div>
 
 </div>

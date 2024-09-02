@@ -4,41 +4,41 @@ function format(type){
     type = type.querySelector(".fa").className;
 
     if(sel.rangeCount){
-        const newText = document.createElement("p");
-
-        // and give it some content
-        const newContent = document.createTextNode(sel.toString());
-
-        console.log(sel.toString());
-        
-      
-        // add the text node to the newly created div
-        newText.appendChild(newContent);
-        switch(type) {
-            case "fa fa-align-left":
-                newText.style.textAlign = "left";
-              break;
-            case "fa fa-align-center":
-                newText.style.textAlign = "center";
-              break;
-            case "fa fa-align-right":
-              newText.style.textAlign = "right";
-              break;
-            case "fa fa-bold":
-              newText.style.fontWeight = "bold";
-              break;
-            default:
-              // code block
-          }
-      
-        // add the newly created element and its content into the DOM
+        const newText = document.createElement("span");
         var range = sel.getRangeAt(0);
-        range.deleteContents(); // Deletes selected text   
-        
-        const currentDiv = document.getElementById("editorText");
-        console.log(newText);
-        currentDiv.appendChild(newText);
+        var styledElement = window.getSelection().getRangeAt(0).endContainer.parentNode;
 
+        console.log(styledElement);
+
+        if(type === "fa fa-bold"){
+          if(styledElement.style.fontWeight === "bold"){
+            newText.style.fontWeight = "normal";
+          } else {
+            newText.style.fontWeight = "bold";
+          }
+        } 
+        
+        if(type === "fa fa-italic"){
+          if(styledElement.style.fontStyle === "italic"){
+            newText.style.fontStyle = "normal";
+          } else {
+            newText.style.fontStyle = "italic";
+          }
+        }
+
+        if(type === "fa fa-underline"){
+          if(styledElement.style.textDecoration === "underline"){
+            newText.style.textDecoration = "none";
+          } else {
+            newText.style.textDecoration = "underline";
+          }
+        }
+  
+
+        newText.innerHTML = sel.toString();
+      
+        range.deleteContents(); 
+        range.insertNode(newText);
     }
  
 }
