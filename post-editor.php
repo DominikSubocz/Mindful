@@ -24,12 +24,26 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav", "f
         <button onclick="format(this)"><i class="fa fa-list" aria-hidden="true"></i></button>
         <button onclick="format(this)"><i class="fa fa-list-ol" aria-hidden="true"></i></button>
         <button onclick="format(this)"><i class="fa fa-quote-left" aria-hidden="true"></i></button>
-        <button onclick="format(this)"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
-        <input type="file"  id="theFile" hidden> </input>
+        <button onclick="showAssets()"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
     </div>
 
     <div id="editorTextArea" class="editorTextArea" contenteditable="true">
-        Enter some text
+
     </div>
 
+</div>
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="assetList">
+            <?php
+                Components::getLocalImages();
+            ?>
+        </div>
+  </div>
+  <button class="upload-btn">Upload Image</button>
+    <span class="close">&times;</span>
+    <p>Choose an image from the assets or upload new image</p>
 </div>

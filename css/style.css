@@ -551,6 +551,58 @@ input:not(input.button) {
   display: block;
 }
 
+.modal{
+  justify-content: center;
+  background-color: #E7E7E7ff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;  
+  width: 1050px;
+  height: fit-content;
+  padding:50px 0;
+  margin:auto;
+}
+
+.modal p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top:0;
+}
+
+.upload-btn{
+  margin:0 auto;
+}
+
+.close{
+  position:absolute;
+  top:0;
+  right:0;
+  margin:10px 15px 0 0;
+  font-size: 48px;
+}
+
+.modal-content{
+  display: flex;
+  justify-content: center;
+}
+
+.assetList{
+  background-color: #fff;
+  display: inline-block;
+  column-count: 5;
+  column-gap: 0px;
+  width: 60%;
+}
+
+.asset-img{
+  background-color: #E7E7E7ff;
+  width: 90%;
+  height: auto;
+}
+
 .filterDiv {
   float: left;
   background-color: #2196F3;

@@ -37,6 +37,13 @@ class Components {
         }
     }
 
+    public static function getLocalImages(){
+        $dir_name = "images/";
+        $images = glob($dir_name."*.png");
+        foreach($images as $image) {
+            require("components/img-asset-card.php");
+        }
+    }
 
 
     public static function latestPosts($books){

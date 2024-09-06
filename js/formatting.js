@@ -103,15 +103,6 @@ function format(type){
                   if(type === "fa fa-quote-left"){
                     const fragment = range.cloneContents();
                     newText.innerHTML = "\"" + sel.toString() + "\"";
-                  } else {
-                    if(type === "fa fa-picture-o"){
-                      elem = document.getElementById("theFile");
-                      if(elem && document.createEvent) {
-                        var evt = document.createEvent("MouseEvents");
-                        
-                        elem.dispatchEvent(evt);
-                     }
-                    }
                   }
                 }
               }
