@@ -75,6 +75,15 @@ textarea{
   min-width: 100%;
 }
 
+.editorImageText{
+  display: flex;
+  max-width: 100%;
+}
+
+.postImg{
+  max-width: 20%;
+}
+
 
 .editorTextArea, #editorText{
   display: flex;
@@ -552,6 +561,7 @@ input:not(input.button) {
 }
 
 .modal{
+  display: none;
   justify-content: center;
   background-color: #E7E7E7ff;
   position: absolute;
@@ -572,8 +582,14 @@ input:not(input.button) {
   top:0;
 }
 
+.modal :nth-child(2){
+  margin: 20px auto 0 auto;
+  width: fit-content;
+}
+
 .upload-btn{
-  margin:0 auto;
+  width: 500px;
+  height: 50px;
 }
 
 .close{
@@ -2201,6 +2217,10 @@ input:not(input.button) {
   margin-left:25px;
 }
 
+.editorContainer{
+  max-width: 90%;
+  margin:0 auto;
+}
 
   
 }

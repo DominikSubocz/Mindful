@@ -1,4 +1,33 @@
 
+
+
+function showAssets(){
+  document.getElementById("myModal").style.display = "block";
+}
+
+function hideAssets(){
+  document.getElementById("myModal").style.display = "none";
+
+}
+
+function insertImg(img){
+  hideAssets();
+  
+  const newImg = document.createElement("img");
+  const imageDiv = document.createElement("div");
+
+  imageDiv.className = "editorImageText"
+  newImg.className = "postImg"
+  newImg.src = img;
+  imageDiv.appendChild(newImg);
+
+  document.getElementById("editorTextArea").appendChild(imageDiv);
+}
+
+document.getElementById("close").addEventListener("click", hideAssets);
+
+
+
 function format(type){
     var sel = window.getSelection(); 
     type = type.querySelector(".fa").className;
@@ -10,36 +39,13 @@ function format(type){
         newText.innerHTML = sel.toString();
 
         console.log(styledElement);
-        if(type === "fa fa-alig-left"){
-          if(styledElement.style.alignText === "left"){
-            newText.style.alignText = "initial";
-          } else {
-            newText.style.alignText = "left";
-          }
-        } else {
-          if(type === "fa fa-alig-center"){
-            if(styledElement.style.alignText === "center"){
-              newText.style.alignText = "initial";
-            } else {
-              newText.style.alignText = "center";
-            }
-          } else {
-            if(type === "fa fa-alig-right"){
-              if(styledElement.style.alignText === "right"){
-                newText.style.alignText = "initial";
-              } else {
-                newText.style.alignText = "right";
-              }
-            } 
-          }
-        }
         if(type === "fa fa-bold"){
           if(styledElement.style.fontWeight === "bold"){
             newText.style.fontWeight = "normal";
           } else {
             newText.style.fontWeight = "bold";
           }
-        } else{
+        } else {
           if(type === "fa fa-italic"){
             if(styledElement.style.fontStyle === "italic"){
               newText.style.fontStyle = "normal";
@@ -108,15 +114,11 @@ function format(type){
               }
             }
           }
-
         }
-        
+        }
 
-  
+      range.deleteContents(); 
+      sel.baseNode.parentNode.appendChild(newText);
 
-      
-        range.deleteContents(); 
-        range.insertNode(newText);
-    }
   }
 }

@@ -38,11 +38,16 @@ class Components {
     }
 
     public static function getLocalImages(){
-        $dir_name = "images/";
-        $images = glob($dir_name."*.png");
-        foreach($images as $image) {
-            require("components/img-asset-card.php");
+        $dir_name = "images/posteditor/";
+        $images = glob($dir_name."*.jpg");
+        if(!empty($images)){
+            foreach($images as $image) {
+                require("components/img-asset-card.php");
+            }
+        } else {
+            echo("No images found!");
         }
+
     }
 
 

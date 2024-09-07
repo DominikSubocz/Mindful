@@ -1,0 +1,71 @@
+} else{
+          if(type === "fa fa-italic"){
+            if(styledElement.style.fontStyle === "italic"){
+              newText.style.fontStyle = "normal";
+            } else {
+              newText.style.fontStyle = "italic";
+            }
+          } else {
+            if(type === "fa fa-underline"){
+              if(styledElement.style.textDecoration === "underline"){
+                newText.style.textDecoration = "none";
+              } else {
+                newText.style.textDecoration = "underline";
+              }
+            } else {
+              if(type === "fa fa-strikethrough"){
+                if(styledElement.style.textDecoration === "line-through"){
+                  newText.style.textDecoration = "none";
+
+                } else {
+                newText.style.textDecoration = "line-through";
+              }
+              } else{
+                if(type === "fa fa-list"){
+                  let list = "<ul>\n"
+                  console.log(sel.toString());
+                  let text = sel.toString();
+                  const myArray = text.split("\n");
+                  console.log(myArray);
+                  if(myArray.length > 1){
+                    for(let i = 0; i < myArray.length; i++){
+                      list = list + "<li>" + myArray[i] + "</li>\n";
+                    }
+
+                    list = list + "\n</ul>";
+
+                    console.log(list);
+                    console.log(myArray.length);
+
+                    newText.innerHTML = list;
+                  }
+                } else {
+                  if(type === "fa fa-list-ol"){
+                    let list = "<ol>\n"
+                    console.log(sel.toString());
+                    let text = sel.toString();
+                    const myArray = text.split("\n");
+                    console.log(myArray);
+                    if(myArray.length > 1){
+                      for(let i = 0; i < myArray.length; i++){
+                        list = list + "<li>" + myArray[i] + "</li>\n";
+                      }
+  
+                      list = list + "\n</ol>";
+  
+                      console.log(list);
+                      console.log(myArray.length);
+  
+                      newText.innerHTML = list;
+                  }
+                } else {
+                  if(type === "fa fa-quote-left"){
+                    const fragment = range.cloneContents();
+                    newText.innerHTML = "\"" + sel.toString() + "\"";
+                  }
+                }
+              }
+            }
+          }
+
+        }
