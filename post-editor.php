@@ -28,8 +28,8 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav", "f
           <button onclick="showAssets()"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
       </div>
   
-      <div id="editorTextArea" class="editorTextArea" contenteditable="true">
-  
+      <div id="editorTextArea" class="editorTextArea" >
+        <span contenteditable="true"></span>
       </div>
   
   </div>

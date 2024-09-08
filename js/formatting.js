@@ -36,7 +36,7 @@ function format(type){
         const newText = document.createElement("span");
         var range = sel.getRangeAt(0);
         var styledElement = window.getSelection().getRangeAt(0).endContainer.parentNode;
-        newText.innerHTML = sel.toString();
+        newText.appendChild(range.extractContents());
 
         console.log(styledElement);
         if(type === "fa fa-bold"){
@@ -117,8 +117,8 @@ function format(type){
         }
         }
 
-      range.deleteContents(); 
-      sel.baseNode.parentNode.appendChild(newText);
+      range.insertNode(newText);
+      sel.removeAllRanges();
 
   }
 }

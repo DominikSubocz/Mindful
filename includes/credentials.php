@@ -3,6 +3,6 @@
 $credentials = array(
     "server" => "localhost",
     "user" => "root",
-    "pass" => "root%Password",
+    "pass" => "",
     "dbName" => "mindful",
 );
