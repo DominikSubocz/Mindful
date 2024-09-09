@@ -45,7 +45,8 @@ function format(type){
         const newText = document.createElement("span");
         let text = "";
         var range = sel.getRangeAt(0);
-        var styledElement = window.getSelection().getRangeAt(0).endContainer.parentNode;
+        var styledElement = window.getSelection().getRangeAt(0).endContainer.parentElement;
+        console.log(range);
         if((type != "fa fa-list") && (type != "fa fa-list-ol") && (type != "fa fa-quote-left")){
           newText.appendChild(range.extractContents());
         } else{
@@ -116,5 +117,22 @@ function format(type){
 
   }
 
+
+}
+
+function fontSize(size){
+
+  var sel = window.getSelection();
+  var range = sel.getRangeAt(0);
+  var styledElement = window.getSelection().getRangeAt(0).endContainer.parentNode;
+
+  var newText = document.createElement("span");
+  newText.appendChild(range.extractContents());
+  if(sel.rangeCount){
+    newText.style.fontSize = size + "px";
+  }
+
+  range.deleteContents();
+  range.insertNode(newText);
 
 }
