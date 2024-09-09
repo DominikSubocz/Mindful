@@ -80,6 +80,10 @@ textarea{
   max-width: 100%;
 }
 
+.editorImageText span{
+  width: 100%;
+}
+
 .postImg{
   max-width: 20%;
 }
