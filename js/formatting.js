@@ -135,4 +135,27 @@ function fontSize(size){
   range.deleteContents();
   range.insertNode(newText);
 
+
+}
+
+
+function saveArticle(){
+  
+  var contentDiv = document.getElementById("editorTextArea");
+  var heading = document.getElementById("heading");
+  var subHeading = document.getElementById("subHeading");
+
+  for(let i = 0; i > contentDiv.length; i++){
+
+  }
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200){
+      console.log(this.responseText);
+      console.log(content);
+    }
+  }
+  xmlhttp.open("GET" , "saveArticle.php?heading="+heading+"&content="+content+"&sub_heading="+subHeading, true);
+  xmlhttp.send();
 }

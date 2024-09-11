@@ -71,4 +71,6 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
   </div>
 </div>
 
+<button onclick="saveArticle()">Save Article</button>
+
 <script src="js/formatting.js"></script>

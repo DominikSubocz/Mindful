@@ -120,6 +120,10 @@ textarea{
 }
 
 
+.editorTextArea span {
+  outline: none;
+}
+
 
 iframe{
   width: 100%;

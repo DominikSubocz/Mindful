@@ -55,6 +55,8 @@ ORDER BY relevance DESC";
 
    public static $getAllTags = "SELECT * FROM mindful.tags";
 
+   public static $insertArticle = "INSERT INTO mindful.draftpost (heading, sub_heading, content) VALUES (?, ?, ?)";
+
 //    SELECT * FROM mindful.books WHERE title LIKE "%a%" AND tags LIKE "%classic%" ORDER BY title ASC;
 
 }

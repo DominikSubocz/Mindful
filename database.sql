@@ -10,6 +10,13 @@ CREATE TABLE mindful.books (
   filename VARCHAR(64)
 );
 
+CREATE TABLE mindful.draftpost (
+  draftPostId INT PRIMARY KEY AUTO_INCREMENT,
+  heading VARCHAR(128) NOT NULL,
+  sub_heading VARCHAR(128),
+  content TEXT
+);
+
 INSERT INTO mindful.books (title, author, tags, price, filename) VALUES
 ("Complete Fairy Tales", "Hans Christian Andersen", "fairy tales, folklore, children's literature", 8.99, "fairy-tales.jpg"),
 ("Faust", "Johann Wolfgang von Goethe", "classic, tragedy, philosophy", 10.49, "faust.jpg"),
