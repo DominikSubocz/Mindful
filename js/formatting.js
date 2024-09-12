@@ -138,24 +138,50 @@ function fontSize(size){
 
 }
 
+function sanitize(string) {
+  const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      "/": '&#x2F;',
+  };
+  const reg = /[&<>"'/]/ig;
+  return string.replace(reg, (match)=>(map[match]));
+}
 
-function saveArticle(){
+
+function saveArticle(evnt){
   
   var contentDiv = document.getElementById("editorTextArea");
   var heading = document.getElementById("heading");
   var subHeading = document.getElementById("subHeading");
 
-  for(let i = 0; i > contentDiv.length; i++){
+  // console.log(contentDiv);
 
-  }
+  console.log(contentDiv.value);
 
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function(){
-    if (this.readyState == 4 && this.status == 200){
+  var xhttp = new XMLHttpRequest;
+
+  xhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
       console.log(this.responseText);
-      console.log(content);
     }
   }
-  xmlhttp.open("GET" , "saveArticle.php?heading="+heading+"&content="+content+"&sub_heading="+subHeading, true);
-  xmlhttp.send();
+
+  document.getElementById('postContent').value = contentDiv.toString;
+
+  var param = contentDiv;
+  var url = 'saveArticle.php?content=' + param;
+
+
+  xhttp.open('GET',url ,true);
+  xhttp.send();
+
+  evnt.preventDefault();
+ 
 }
+
+document.getElementById('saveForm').onsubmit = saveArticle;
+

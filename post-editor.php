@@ -71,6 +71,8 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
   </div>
 </div>
 
-<button onclick="saveArticle()">Save Article</button>
-
+<form id='saveForm'>
+  <input type='submit' value='Save Article'/>
+  <input type='hidden' value='' id='postContent'/>
+</form>
 <script src="js/formatting.js"></script>
