@@ -232,7 +232,6 @@ input.button {
 
 .sidebar-navigation ul {
   display: flex;
-  flex-direction: column;
   gap:16px;
 }
 

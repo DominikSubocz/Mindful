@@ -1,7 +1,12 @@
 <?php
 require("classes/components.php");
 require("classes/tags.php");
+
+$id = $_GET['id'];
+
 Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
+
+
 
 ?>
 
@@ -74,5 +79,6 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
 <form id='saveForm'>
   <input type='submit' value='Save Article'/>
   <input type='hidden' value='' id='postContent'/>
+  <input type="hidden" id="hiddenPostId" value = "<?php echo $id; ?>">
 </form>
 <script src="js/formatting.js"></script>

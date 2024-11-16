@@ -81,6 +81,17 @@ class Book{
 
     }
 
+    public static function getLastId() {
+        $conn = Connection::connect();
+
+        $stmt = $conn->prepare("SELECT draftPostId FROM draftpost WHERE draftPostId = (SELECT MAX(draftPostId) FROM draftpost)");
+        $stmt -> execute();
+        $id = $stmt->fetch();
+
+        return $id['draftPostId'];
+
+    }
+
     public static function create() {
         $filename = Utils::$defaultBookCover;
 

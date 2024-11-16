@@ -155,6 +155,7 @@ function saveArticle(event) {
   
   event.preventDefault();
 
+  var postId = document.getElementById("hiddenPostId");
   var contentDiv = document.getElementById("editorTextArea");
   var heading = document.getElementById("heading").value;  // Assuming heading is an input element
   var subHeading = document.getElementById("subHeading").value;  // Assuming subHeading is an input element
@@ -171,7 +172,8 @@ function saveArticle(event) {
   }
 
   // Send a GET request with the content as a query string
-  xmlhttp.open("GET", "saveArticle.php?heading=" + encodeURIComponent(heading) + 
+  xmlhttp.open("GET", "saveArticle.php?id=" + postId.value +
+               "&heading=" + encodeURIComponent(heading) + 
                "&content=" + encodeURIComponent(content) + 
                "&sub_heading=" + encodeURIComponent(subHeading), true);
   xmlhttp.send();

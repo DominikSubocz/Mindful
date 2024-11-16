@@ -11,7 +11,7 @@ CREATE TABLE mindful.books (
 );
 
 CREATE TABLE mindful.draftpost (
-  draftPostId INT PRIMARY KEY AUTO_INCREMENT,
+  draftPostId INT PRIMARY KEY,
   heading VARCHAR(128) NOT NULL,
   sub_heading VARCHAR(128),
   content LONGTEXT

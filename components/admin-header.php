@@ -61,7 +61,7 @@
         <div class="sidebar">
           <div class="sidebar-navigation">
             <ul>
-              <a href="add-book.php">Add Book</a>
+            <a href='post-editor.php?id=<?php $id = intval(Book::getLastId()); echo $id + 1; ?>'>Add Book</a>
               <a href="add-tag.php">Add Tag</a>
               <a href="tag-list.php">Add Book</a>
               <a href="event-list.php">Events</a>
