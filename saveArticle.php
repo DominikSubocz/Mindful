@@ -2,15 +2,18 @@
 require("classes/sql.php");
 require("classes/connection.php");
 
-// $heading = $_REQUEST["heading"];
-// $subHeading = $_REQUEST["sub_heading"];
+$heading = $_REQUEST["heading"];
+$subHeading = $_REQUEST["sub_heading"];
 $content = $_REQUEST["content"];
 
-echo($content);
+$conn = Connection::connect();
 
-// $conn = Connection::connect();
+$stmt = $conn->prepare(SQL::$insertArticle);
+if($stmt->execute([$heading, $subHeading, $content])) {
+    echo "Success!";
+} else {
+    echo "Fail!";
+}
 
-// $stmt = $conn->prepare(SQL::$insertArticle);
-// $stmt->execute([$heading, $subHeading, $content]);
 
 ?>

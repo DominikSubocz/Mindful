@@ -1,5 +1,5 @@
 
-
+document.getElementById("saveForm").addEventListener("submit", saveArticle, false)
 
 function showAssets(){
   document.getElementById("myModal").style.display = "block";
@@ -151,37 +151,28 @@ function sanitize(string) {
   return string.replace(reg, (match)=>(map[match]));
 }
 
-
-function saveArticle(evnt){
+function saveArticle(event) {
   
+  event.preventDefault();
+
   var contentDiv = document.getElementById("editorTextArea");
-  var heading = document.getElementById("heading");
-  var subHeading = document.getElementById("subHeading");
+  var heading = document.getElementById("heading").value;  // Assuming heading is an input element
+  var subHeading = document.getElementById("subHeading").value;  // Assuming subHeading is an input element
 
-  // console.log(contentDiv);
+  // Get the HTML content of the editor
+  var content = contentDiv.innerHTML;
 
-  console.log(contentDiv.value);
-
-  var xhttp = new XMLHttpRequest;
-
-  xhttp.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-      console.log(this.responseText);
-    }
+  // Create an XMLHttpRequest object
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText);
+      }
   }
 
-  document.getElementById('postContent').value = contentDiv.toString;
-
-  var param = contentDiv;
-  var url = 'saveArticle.php?content=' + param;
-
-
-  xhttp.open('GET',url ,true);
-  xhttp.send();
-
-  evnt.preventDefault();
- 
+  // Send a GET request with the content as a query string
+  xmlhttp.open("GET", "saveArticle.php?heading=" + encodeURIComponent(heading) + 
+               "&content=" + encodeURIComponent(content) + 
+               "&sub_heading=" + encodeURIComponent(subHeading), true);
+  xmlhttp.send();
 }
-
-document.getElementById('saveForm').onsubmit = saveArticle;
-

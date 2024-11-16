@@ -14,7 +14,7 @@ CREATE TABLE mindful.draftpost (
   draftPostId INT PRIMARY KEY AUTO_INCREMENT,
   heading VARCHAR(128) NOT NULL,
   sub_heading VARCHAR(128),
-  content TEXT
+  content LONGTEXT
 );
 
 INSERT INTO mindful.books (title, author, tags, price, filename) VALUES
