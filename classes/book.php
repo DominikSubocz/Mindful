@@ -5,7 +5,7 @@ require_once("classes/sql.php");
 require_once("classes/utils.php");
 
 class Book{
-    public static function getAllBooks(){
+    public static function getAllPosts(){
         $conn = Connection::connect();
 
         $stmt = $conn->prepare(SQL::$getAllBooks);
@@ -30,6 +30,49 @@ class Book{
 
         return $book;
     }
+
+    public static function getPostById($postId) {
+        $conn = Connection::connect();
+        $result = false;
+
+        $stmt = $conn->prepare(SQL::$getPostById);
+        
+        if ($stmt->execute([$postId])) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        $conn = null;
+
+        return $result;
+    }
+
+    public static function getPostInfoById($postId) {
+        $conn = Connection::connect();
+
+        $stmt = $conn->prepare(SQL::$getPostInfoById);
+        $stmt->execute([$postId]);
+        $book = $stmt->fetch();
+
+        $conn = null;
+
+        return $book;
+    }
+
+    public static function updatePost($heading, $subHeading, $content, $id) {
+        $conn = Connection::connect();
+
+        $result = false;
+        $stmt = $conn->prepare(SQL::$updatePostById);
+        
+        if($stmt->execute([$heading, $subHeading, $content, $id])) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+
+        return $result;
+    } 
 
     public static function validate() {
         if(Utils::postValuesAreEmpty(["title", "author", "price"])){

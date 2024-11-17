@@ -1,7 +1,7 @@
 <?php
 
 class SQL {
-  public static $getAllBooks = "SELECT * FROM books";
+  public static $getAllBooks = "SELECT * FROM draftpost";
 
   /**
    * Get the book with the id given in the URL parameter.
@@ -58,5 +58,15 @@ ORDER BY relevance DESC";
    public static $insertArticle = "INSERT INTO mindful.draftpost (draftPostId, heading, sub_heading, content) VALUES (?, ?, ?, ?)";
 
 //    SELECT * FROM mindful.books WHERE title LIKE "%a%" AND tags LIKE "%classic%" ORDER BY title ASC;
+
+    public static $getPostById = "SELECT draftPostId FROM mindful.draftpost WHERE draftPostId = ?";
+    
+    public static $getPostInfoById = "SELECT * FROM mindful.draftpost WHERE draftPostId = ?";
+
+    public static $updatePostById = "UPDATE draftpost 
+    SET heading = ?, 
+    sub_heading = ?, 
+    content = ? 
+    WHERE draftPostId = ?";
 
 }

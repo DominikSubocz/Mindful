@@ -4,9 +4,8 @@ require("classes/tags.php");
 
 $id = $_GET['id'];
 
+
 Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
-
-
 
 ?>
 
@@ -53,7 +52,7 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
       </div>
   
       <div id="editorTextArea" class="editorTextArea" >
-        <span contenteditable="true"></span>
+        <span id="test" contenteditable="true"></span>
       </div>
   
   </div>
@@ -82,3 +81,8 @@ Components::pageHeader("Login", ["style", "font-awesome.min"], ["mobile-nav"]);
   <input type="hidden" id="hiddenPostId" value = "<?php echo $id; ?>">
 </form>
 <script src="js/formatting.js"></script>
+<script>
+
+  let id = document.getElementById("hiddenPostId").value;
+  loadArticle(id);
+</script>

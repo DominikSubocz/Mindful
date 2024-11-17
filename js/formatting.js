@@ -178,3 +178,26 @@ function saveArticle(event) {
                "&sub_heading=" + encodeURIComponent(subHeading), true);
   xmlhttp.send();
 }
+
+function loadArticle(id) {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          var responseArray = JSON.parse(this.responseText);
+          console.log(responseArray);
+
+          document.getElementById("heading").value = responseArray.heading;
+          document.getElementById("subHeading").value = responseArray.sub_heading;
+
+          var content = document.createElement("span");
+
+          content.innerHTML = responseArray.content;
+
+          document.getElementById("test").appendChild(content);
+      }
+  }
+
+  // Send a GET request with the content as a query string
+  xmlhttp.open("GET", "loadPost.php?id=" + id);
+  xmlhttp.send();
+}

@@ -87,7 +87,7 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
     
         <?php
     
-        $books = Book::getAllBooks();
+        $books = Book::getAllPosts();
         Components::latestPosts($books);
     
         ?>
@@ -136,8 +136,8 @@ Components::pageHeader("All Books", ["style"], ["mobile-nav"]);
             </div> -->
             <?php
     
-            $books = Book::getAllBooks();
-            Components::allBooks($books);
+            $books = Book::getAllPosts();
+            Components::allPosts($books);
             ?>
 
 
