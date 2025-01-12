@@ -19,9 +19,9 @@ class Components {
         if(!empty($books)){
 
             foreach($books as $book){
-                $bookId = Utils::escape($book["draftPostId"]);
-                $title = Utils::escape($book["heading"]);
-                $author = Utils::escape($book["subheading"]);
+                $bookId = Utils::escape($book["book_id"]);
+                $title = Utils::escape($book["title"]);
+                $author = Utils::escape($book["author"]);
                 $price = Utils::escape($book["price"]);
                 $filename = Utils::escape($book["filename"]);
                 $tags = Utils::escape($book["tags"]);
@@ -60,9 +60,10 @@ class Components {
                     break; // Exit the loop once three books have been displayed
                 }
                 
-                $bookId = Utils::escape($book["draftPostId"]);
-                $title = Utils::escape($book["heading"]);
-                $author = Utils::escape($book["sub_heading"]);
+                var_dump($book);
+                $bookId = Utils::escape($book["book_id"]);
+                $title = Utils::escape($book["title"]);
+                $author = Utils::escape($book["author"]);
 
         
                 require("components/book-card.php");

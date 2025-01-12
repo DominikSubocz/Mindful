@@ -3,12 +3,12 @@ require("classes/book.php");
 require("classes/components.php");
 
 
-$books = Book::getAllBooks();
+$books = Book::getAllPosts();
 
 $a[] = "";
 
 foreach($books as $book => $v) {
-    $a[] = $v['title'];
+    $a[] = $v['heading'];
 }
 
 
@@ -43,7 +43,7 @@ if ($q !== "") {
   if ($sort !== ""){
 
     $results = Book::searchArticleName($q, $sort, $searchTags);
-    Components::allBooks($results);
+    Components::allPosts($results);
 
     }
   
